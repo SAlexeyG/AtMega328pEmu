@@ -14,11 +14,13 @@ namespace Emu328p.Emulator
 		private IFlash flashManager = null;
 		private IExecuter opcodeExecuter = null;
 		private IUART uartUnit = null;
+		private bool isRunning = false;
 
 		public ISRAM SramManager => sramManager;
 		public IFlash FlashManager => flashManager;
 		public IExecuter OpcodeExecuter => opcodeExecuter;
 		public IUART UartUnit => uartUnit;
+		public bool IsRunning => isRunning;
 
 		public Controller(byte[] firmware)
 		{
@@ -30,14 +32,35 @@ namespace Emu328p.Emulator
 
 		public async void RunAsync()
 		{
+			isRunning = true;
+			bool isError = false;
+
 			await Task.Run(() =>
 			{
-				bool isError = false;
-				while (!flashManager.IsEndOfMemory() && !isError)
+				while (!flashManager.IsEndOfMemory() && !isError && isRunning)
 				{
 					isError = !opcodeExecuter.ExecuteNextMicrocommand(sramManager, flashManager);
 				}
 			});
+		}
+
+		public async void ExecuteOneAsync()
+		{
+			await Task.Run(() =>
+			{
+				_ = opcodeExecuter.ExecuteNextMicrocommand(sramManager, flashManager);
+			});
+		}
+
+		public void Reset()
+		{
+			sramManager.Clear();
+			flashManager.PC = 0;
+		}
+
+		public void Stop()
+		{
+			isRunning = false;
 		}
 	}
 }

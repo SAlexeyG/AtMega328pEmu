@@ -41,7 +41,24 @@ namespace Emu328p
 			byte[] firmware = FileReader.ReadBin(filePath);
 
 			microcontroller = new Controller(firmware);
-			playType.Add("Запуск", microcontroller.RunAsync);
+
+			playType.Add("Запуск", () => 
+			{
+				menuPlayType.Enabled = false;
+				menuStop.Enabled = true;
+				menuPlay.Enabled = false;
+				microcontroller.RunAsync(); 
+			});
+
+			playType.Add("Отладка", () => 
+			{
+				menuPlayType.Enabled = false;
+				menuStop.Enabled = true;
+				menuPlay.Text = "Далее";
+				microcontroller.ExecuteOneAsync();
+				opcodeListBox.SelectedIndex = (int) microcontroller.FlashManager.PC / 2;
+			});
+
 			menuPlay.Enabled = true;
 
 			for (int i = 0; i < firmware.Length; i += 2)
@@ -83,10 +100,38 @@ namespace Emu328p
 		{
 			await Task.Run(() =>
 			{
-				Invoke(new Action(() => { txLedPicture.Visible = true; }));
+				Invoke(new Action(() => txLedPicture.Visible = true));
 				Thread.Sleep(100);
-				Invoke(new Action(() => { txLedPicture.Visible = false; }));
+				Invoke(new Action(() => txLedPicture.Visible = false));
 			});
+		}
+
+		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (microcontroller != null)
+			{
+				microcontroller.UartUnit.OnCharWriting -= TXBlinckAsync;
+				microcontroller.Stop();
+			}
+		}
+
+		private void menuStop_Click(object sender, EventArgs e)
+		{
+			menuPlayType.Enabled = true;
+			menuStop.Enabled = false;
+			menuPlay.Enabled = true;
+			menuPlay.Text = "Пуск";
+
+			microcontroller.Stop();
+			microcontroller.Reset();
+
+			uartWindow.Clear();
+		}
+
+		private void resetButtonPicture_Click(object sender, EventArgs e)
+		{
+			microcontroller.Stop();
+			microcontroller.Reset();
 		}
 	}
 }

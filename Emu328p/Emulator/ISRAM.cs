@@ -13,5 +13,6 @@ namespace Emu328p.Emulator
 		void SetByte(uint offset, byte value);
 		ushort GetWord(uint offset);
 		void SetWord(uint offset, ushort value);
+		void Clear();
 	}
 }

@@ -36,17 +36,20 @@ namespace Emu328p
 			this.menuWindowUART = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuPlayType = new System.Windows.Forms.ToolStripComboBox();
 			this.menuPlay = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStop = new System.Windows.Forms.ToolStripMenuItem();
 			this.opcodeListBox = new System.Windows.Forms.ListBox();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.picturePanel = new System.Windows.Forms.Panel();
 			this.onLedPicture = new System.Windows.Forms.PictureBox();
 			this.txLedPicture = new System.Windows.Forms.PictureBox();
 			this.rxLedPicture = new System.Windows.Forms.PictureBox();
+			this.resetButtonPicture = new System.Windows.Forms.PictureBox();
 			this.menuStrip.SuspendLayout();
 			this.picturePanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.onLedPicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txLedPicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.rxLedPicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.resetButtonPicture)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip
@@ -55,7 +58,8 @@ namespace Emu328p
             this.menuFile,
             this.menuWindow,
             this.menuPlayType,
-            this.menuPlay});
+            this.menuPlay,
+            this.menuStop});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
 			this.menuStrip.Size = new System.Drawing.Size(769, 27);
@@ -89,7 +93,7 @@ namespace Emu328p
 			// 
 			this.menuWindowUART.CheckOnClick = true;
 			this.menuWindowUART.Name = "menuWindowUART";
-			this.menuWindowUART.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowUART.Size = new System.Drawing.Size(102, 22);
 			this.menuWindowUART.Text = "UART";
 			this.menuWindowUART.Click += new System.EventHandler(this.menuWindowUART_Click);
 			// 
@@ -111,6 +115,15 @@ namespace Emu328p
 			this.menuPlay.Text = "Пуск";
 			this.menuPlay.Click += new System.EventHandler(this.menuPlay_Click);
 			// 
+			// menuStop
+			// 
+			this.menuStop.BackColor = System.Drawing.Color.Brown;
+			this.menuStop.Enabled = false;
+			this.menuStop.Name = "menuStop";
+			this.menuStop.Size = new System.Drawing.Size(46, 23);
+			this.menuStop.Text = "Стоп";
+			this.menuStop.Click += new System.EventHandler(this.menuStop_Click);
+			// 
 			// opcodeListBox
 			// 
 			this.opcodeListBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -130,6 +143,7 @@ namespace Emu328p
 			// 
 			this.picturePanel.BackgroundImage = global::Emu328p.Properties.Resources.arduino_board2;
 			this.picturePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.picturePanel.Controls.Add(this.resetButtonPicture);
 			this.picturePanel.Controls.Add(this.onLedPicture);
 			this.picturePanel.Controls.Add(this.txLedPicture);
 			this.picturePanel.Controls.Add(this.rxLedPicture);
@@ -154,7 +168,7 @@ namespace Emu328p
 			// 
 			this.txLedPicture.BackColor = System.Drawing.Color.Transparent;
 			this.txLedPicture.Image = global::Emu328p.Properties.Resources.LED;
-			this.txLedPicture.Location = new System.Drawing.Point(305, 153);
+			this.txLedPicture.Location = new System.Drawing.Point(304, 153);
 			this.txLedPicture.Name = "txLedPicture";
 			this.txLedPicture.Size = new System.Drawing.Size(32, 32);
 			this.txLedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,6 +188,17 @@ namespace Emu328p
 			this.rxLedPicture.TabStop = false;
 			this.rxLedPicture.Visible = false;
 			// 
+			// resetButtonPicture
+			// 
+			this.resetButtonPicture.BackColor = System.Drawing.Color.Transparent;
+			this.resetButtonPicture.Location = new System.Drawing.Point(366, 78);
+			this.resetButtonPicture.Name = "resetButtonPicture";
+			this.resetButtonPicture.Size = new System.Drawing.Size(15, 15);
+			this.resetButtonPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.resetButtonPicture.TabIndex = 5;
+			this.resetButtonPicture.TabStop = false;
+			this.resetButtonPicture.Click += new System.EventHandler(this.resetButtonPicture_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,12 +210,14 @@ namespace Emu328p
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MainForm";
 			this.Text = "Emu328p";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.picturePanel.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.onLedPicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txLedPicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.rxLedPicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.resetButtonPicture)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -211,6 +238,8 @@ namespace Emu328p
 		private System.Windows.Forms.PictureBox onLedPicture;
 		private System.Windows.Forms.PictureBox txLedPicture;
 		private System.Windows.Forms.ToolStripMenuItem menuWindowUART;
+		private System.Windows.Forms.ToolStripMenuItem menuStop;
+		private System.Windows.Forms.PictureBox resetButtonPicture;
 	}
 }
 

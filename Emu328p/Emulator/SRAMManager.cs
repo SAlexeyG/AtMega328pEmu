@@ -12,6 +12,12 @@ namespace Emu328p.Emulator
 
 		public event Action OnSRAMChanged;
 
+		public void Clear()
+		{
+			for (int i = 0; i < sram.Length; i++)
+				sram[i] = 0;
+		}
+
 		public byte GetByte(uint offset)
 		{
 			return sram[offset];

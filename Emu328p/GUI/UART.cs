@@ -28,6 +28,11 @@ namespace Emu328p.GUI
 			uartUnit.OnCharWriting += WriteChar;
 		}
 
+		public void Clear()
+		{
+			textBox.Text = "";
+		}
+
 		private void WriteChar(char symbol)
 		{
 			Invoke(AddSymbol, symbol);
