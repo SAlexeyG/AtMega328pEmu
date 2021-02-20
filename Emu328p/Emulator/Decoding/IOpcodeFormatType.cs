@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Emu328p.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Emu328p.Emulator.Decoding
 	{
 		ushort OperandMask { get; }
 
-		Action<ushort, ISRAM, IFlash> GetDecodedOperation(ushort opcodeWithoutOperands);
+		DecodedOperation GetDecodedOperation(ushort opcodeWithoutOperands);
 
 		bool HasDecodedOperation(ushort opcodeWithoutOperands);
 	}

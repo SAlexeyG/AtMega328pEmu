@@ -7,27 +7,14 @@ using System.Threading.Tasks;
 
 namespace Emu328p.Emulator.Decoding
 {
-	public class Type11 : IOpcodeFormatType
+	public class Type11 : Type
 	{
-		private Dictionary<ushort, Action<ushort, ISRAM, IFlash>> decodingTable =
-			new Dictionary<ushort, Action<ushort, ISRAM, IFlash>>();
-
-		public ushort OperandMask => 0xfe0e;
+		public override ushort OperandMask => 0xfe0e;
 
 		public Type11()
 		{
 			decodingTable.Add(0x940c, Jmp);
 			decodingTable.Add(0x940e, Call);
-		}
-
-		public Action<ushort, ISRAM, IFlash> GetDecodedOperation(ushort opcodeWithoutOperands)
-		{
-			return decodingTable[opcodeWithoutOperands];
-		}
-
-		public bool HasDecodedOperation(ushort opcodeWithoutOperands)
-		{
-			return decodingTable.ContainsKey(opcodeWithoutOperands);
 		}
 
 		private void Jmp(ushort opcode, ISRAM sramManager, IFlash flashManager)

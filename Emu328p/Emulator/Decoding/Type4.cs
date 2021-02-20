@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Emu328p.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,22 +7,9 @@ using System.Threading.Tasks;
 
 namespace Emu328p.Emulator.Decoding
 {
-	public class Type4 : IOpcodeFormatType
+	public class Type4 : Type
 	{
-		private Dictionary<ushort, Action<ushort, ISRAM, IFlash>> decodingTable =
-			new Dictionary<ushort, Action<ushort, ISRAM, IFlash>>();
-
-		public ushort OperandMask => 0xfe0f;
-
-		public Action<ushort, ISRAM, IFlash> GetDecodedOperation(ushort opcodeWithoutOperands)
-		{
-			return decodingTable[opcodeWithoutOperands];
-		}
-
-		public bool HasDecodedOperation(ushort opcodeWithoutOperands)
-		{
-			return decodingTable.ContainsKey(opcodeWithoutOperands);
-		}
+		public override ushort OperandMask => 0xfe0f;
 
 		public Type4()
 		{
@@ -38,7 +26,7 @@ namespace Emu328p.Emulator.Decoding
 			decodingTable.Add(0x9202, StDec(Registers.GP.Z));
 		}
 
-		private Action<ushort, ISRAM, IFlash> St(uint register)
+		private DecodedOperation St(uint register)
 		{
 			return (ushort opcode, ISRAM sramManager, IFlash flashManager) =>
 			{
@@ -48,7 +36,7 @@ namespace Emu328p.Emulator.Decoding
 			};
 		}
 
-		private Action<ushort, ISRAM, IFlash> StInc(uint register)
+		private DecodedOperation StInc(uint register)
 		{
 			return (ushort opcode, ISRAM sramManager, IFlash flashManager) =>
 			{
@@ -60,7 +48,7 @@ namespace Emu328p.Emulator.Decoding
 			};
 		}
 
-		private Action<ushort, ISRAM, IFlash> StDec(uint register)
+		private DecodedOperation StDec(uint register)
 		{
 			return (ushort opcode, ISRAM sramManager, IFlash flashManager) =>
 			{

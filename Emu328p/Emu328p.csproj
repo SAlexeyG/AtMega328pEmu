@@ -51,6 +51,7 @@
     <Compile Include="Emulator\Decoding\DecodingUnit.cs" />
     <Compile Include="Emulator\Decoding\IDecodingUnit.cs" />
     <Compile Include="Emulator\Decoding\IOpcodeFormatType.cs" />
+    <Compile Include="Emulator\Decoding\Type.cs" />
     <Compile Include="Emulator\Decoding\Type1.cs" />
     <Compile Include="Emulator\Decoding\Type11.cs" />
     <Compile Include="Emulator\Decoding\Type13.cs" />
@@ -85,6 +86,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\DecodedOperation.cs" />
     <Compile Include="Tools\FileReader.cs" />
     <EmbeddedResource Include="GUI\UART.resx">
       <DependentUpon>UART.cs</DependentUpon>

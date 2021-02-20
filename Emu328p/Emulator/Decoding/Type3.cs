@@ -6,22 +6,9 @@ using System.Threading.Tasks;
 
 namespace Emu328p.Emulator.Decoding
 {
-	public class Type3 : IOpcodeFormatType
+	public class Type3 : Type
 	{
-		private Dictionary<ushort, Action<ushort, ISRAM, IFlash>> decodingTable =
-			new Dictionary<ushort, Action<ushort, ISRAM, IFlash>>();
-
-		public ushort OperandMask => 0xf000;
-
-		public Action<ushort, ISRAM, IFlash> GetDecodedOperation(ushort opcodeWithoutOperands)
-		{
-			return decodingTable[opcodeWithoutOperands];
-		}
-
-		public bool HasDecodedOperation(ushort opcodeWithoutOperands)
-		{
-			return decodingTable.ContainsKey(opcodeWithoutOperands);
-		}
+		public override ushort OperandMask => 0xf000;
 
 		public Type3()
 		{

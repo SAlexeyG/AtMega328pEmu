@@ -1,4 +1,5 @@
 ﻿using Emu328p.Emulator.Decoding;
+using Emu328p.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,11 @@ namespace Emu328p.Emulator
 		public bool ExecuteNextMicrocommand(ISRAM sramManager, IFlash flashManager)
 		{
 			ushort opcode = flashManager.GetWord();
-			Action<ushort, ISRAM, IFlash> action = decodingUnit.Decode(opcode);
+			DecodedOperation action = decodingUnit.Decode(opcode);
 
 			if (action == null)
 			{
-				Console.WriteLine($"Opcode {Convert.ToString(opcode, 16)} does not defined");
+				MessageBox.Show($"Opcode {Convert.ToString(opcode, 16)} does not defined");
 				return false;
 			}
 
