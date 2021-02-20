@@ -14,7 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Emu328p
+namespace Emu328p.GUI
 {
 	public partial class MainForm : Form
 	{

@@ -1,5 +1,5 @@
 ﻿
-namespace Emu328p
+namespace Emu328p.GUI
 {
 	partial class MainForm
 	{
@@ -55,11 +55,11 @@ namespace Emu328p
 			// menuStrip
 			// 
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuFile,
-            this.menuWindow,
-            this.menuPlayType,
-            this.menuPlay,
-            this.menuStop});
+			this.menuFile,
+			this.menuWindow,
+			this.menuPlayType,
+			this.menuPlay,
+			this.menuStop});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
 			this.menuStrip.Size = new System.Drawing.Size(769, 27);
@@ -69,7 +69,7 @@ namespace Emu328p
 			// menuFile
 			// 
 			this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.file_open});
+			this.file_open});
 			this.menuFile.Name = "menuFile";
 			this.menuFile.Size = new System.Drawing.Size(48, 23);
 			this.menuFile.Text = "Файл";
@@ -84,7 +84,7 @@ namespace Emu328p
 			// menuWindow
 			// 
 			this.menuWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuWindowUART});
+			this.menuWindowUART});
 			this.menuWindow.Name = "menuWindow";
 			this.menuWindow.Size = new System.Drawing.Size(48, 23);
 			this.menuWindow.Text = "Окно";
@@ -100,8 +100,8 @@ namespace Emu328p
 			// menuPlayType
 			// 
 			this.menuPlayType.Items.AddRange(new object[] {
-            "Запуск",
-            "Отладка"});
+			"Запуск",
+			"Отладка"});
 			this.menuPlayType.Name = "menuPlayType";
 			this.menuPlayType.Size = new System.Drawing.Size(121, 23);
 			this.menuPlayType.Text = "Запуск";
