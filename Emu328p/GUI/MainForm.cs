@@ -21,6 +21,7 @@ namespace Emu328p.GUI
 		private Controller microcontroller = null;
 		private Dictionary<string, Action> playType = new Dictionary<string, Action>();
 		private UART uartWindow;
+		private Action<PictureBox> LedSwitcher;
 
 		public MainForm()
 		{
@@ -28,6 +29,18 @@ namespace Emu328p.GUI
 			uartWindow = new UART();
 			uartWindow.Show();
 			uartWindow.Visible = false;
+			LedSwitcher = (led) => led.Visible = !led.Visible;
+		}
+
+		private void menuPlay_Click(object sender, EventArgs e)
+		{
+			playType[menuPlayType.Text]?.Invoke();
+			onLedPicture.Visible = true;
+		}
+
+		private void menuWindowUART_Click(object sender, EventArgs e)
+		{
+			uartWindow.Visible = menuWindowUART.Checked;
 		}
 
 		private void file_open_Click(object sender, EventArgs e)
@@ -42,68 +55,13 @@ namespace Emu328p.GUI
 
 			microcontroller = new Controller(firmware);
 
-			playType.Add("Запуск", () => 
-			{
-				menuPlayType.Enabled = false;
-				menuStop.Enabled = true;
-				menuPlay.Enabled = false;
-				microcontroller.RunAsync(); 
-			});
-
-			playType.Add("Отладка", () => 
-			{
-				menuPlayType.Enabled = false;
-				menuStop.Enabled = true;
-				menuPlay.Text = "Далее";
-				microcontroller.ExecuteOneAsync();
-				opcodeListBox.SelectedIndex = (int) microcontroller.FlashManager.PC / 2;
-			});
+			playType.Add("Запуск", RunPreparing);
+			playType.Add("Отладка", DebugPreparing);
 
 			menuPlay.Enabled = true;
-
-			for (int i = 0; i < firmware.Length; i += 2)
-			{
-				ushort opcode = firmware[i + 1];
-				opcode <<= 8;
-				opcode |= firmware[i];
-				opcodeListBox.Items.Add(UshortToHexString(opcode));
-			}
-
+			FillOpcodeListBox(firmware);
 			uartWindow.SetUARTUnit(microcontroller.UartUnit);
 			microcontroller.UartUnit.OnCharWriting += TXBlinckAsync;
-		}
-
-		private string UshortToHexString(ushort opcode)
-		{
-			string hexOpcode = Convert.ToString(opcode, 16).ToUpper();
-			while (hexOpcode.Length < 4)
-			{
-				hexOpcode = hexOpcode.Insert(0, "0");
-			}
-
-			hexOpcode = hexOpcode.Insert(0, "0x");
-			return hexOpcode;
-		}
-
-		private void menuPlay_Click(object sender, EventArgs e)
-		{
-			playType[menuPlayType.Text]?.Invoke();
-			onLedPicture.Visible = true;
-		}
-
-		private void menuWindowUART_Click(object sender, EventArgs e)
-		{
-			uartWindow.Visible = menuWindowUART.Checked;
-		}
-
-		private async void TXBlinckAsync(char _)
-		{
-			await Task.Run(() =>
-			{
-				Invoke(new Action(() => txLedPicture.Visible = true));
-				Thread.Sleep(100);
-				Invoke(new Action(() => txLedPicture.Visible = false));
-			});
 		}
 
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -132,6 +90,44 @@ namespace Emu328p.GUI
 		{
 			microcontroller.Stop();
 			microcontroller.Reset();
+		}
+
+		private void FillOpcodeListBox(byte[] firmware)
+		{
+			for (int i = 0; i < firmware.Length; i += 2)
+			{
+				ushort opcode = firmware[i + 1];
+				opcode <<= 8;
+				opcode |= firmware[i];
+				opcodeListBox.Items.Add(opcode.ToHexString());
+			}
+		}
+
+		private void RunPreparing()
+		{
+			menuPlayType.Enabled = false;
+			menuStop.Enabled = true;
+			menuPlay.Enabled = false;
+			microcontroller.RunAsync();
+		}
+
+		private void DebugPreparing()
+		{
+			menuPlayType.Enabled = false;
+			menuStop.Enabled = true;
+			menuPlay.Text = "Далее";
+			microcontroller.ExecuteOneAsync();
+			opcodeListBox.SelectedIndex = (int)microcontroller.FlashManager.PC / 2;
+		}
+
+		private async void TXBlinckAsync(char _)
+		{
+			await Task.Run(() =>
+			{
+				Invoke(LedSwitcher, txLedPicture);
+				Thread.Sleep(100);
+				Invoke(LedSwitcher, txLedPicture);
+			});
 		}
 	}
 }
