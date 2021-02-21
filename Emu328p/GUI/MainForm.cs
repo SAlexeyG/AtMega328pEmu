@@ -55,8 +55,8 @@ namespace Emu328p.GUI
 
 			microcontroller = new Controller(firmware);
 
-			playType.Add("Запуск", RunPreparing);
-			playType.Add("Отладка", DebugPreparing);
+			playType.Add("Запуск", PlayRunning);
+			playType.Add("Отладка", PlayDebugging);
 
 			menuPlay.Enabled = true;
 			FillOpcodeListBox(firmware);
@@ -79,6 +79,9 @@ namespace Emu328p.GUI
 			menuStop.Enabled = false;
 			menuPlay.Enabled = true;
 			menuPlay.Text = "Пуск";
+
+			playType["Отладка"] -= DebugNext;
+			playType["Отладка"] += PlayDebugging;
 
 			microcontroller.Stop();
 			microcontroller.Reset();
@@ -103,7 +106,7 @@ namespace Emu328p.GUI
 			}
 		}
 
-		private void RunPreparing()
+		private void PlayRunning()
 		{
 			menuPlayType.Enabled = false;
 			menuStop.Enabled = true;
@@ -111,22 +114,37 @@ namespace Emu328p.GUI
 			microcontroller.RunAsync();
 		}
 
-		private void DebugPreparing()
+		private void PlayDebugging()
 		{
 			menuPlayType.Enabled = false;
 			menuStop.Enabled = true;
 			menuPlay.Text = "Далее";
+			playType["Отладка"] -= PlayDebugging;
+			playType["Отладка"] += DebugNext;
+			opcodeListBox.SelectedIndex = (int)microcontroller.FlashManager.PC / 2;
+		}
+
+		private void DebugNext()
+		{
 			microcontroller.ExecuteOneAsync();
 			opcodeListBox.SelectedIndex = (int)microcontroller.FlashManager.PC / 2;
 		}
 
-		private async void TXBlinckAsync(char _)
+		private async void TXBlinckAsync(object sender, UARTEventArgs e)
 		{
 			await Task.Run(() =>
 			{
-				Invoke(LedSwitcher, txLedPicture);
+				if (!IsDisposed)
+				{
+					Invoke(LedSwitcher, txLedPicture);
+				}
+
 				Thread.Sleep(100);
-				Invoke(LedSwitcher, txLedPicture);
+
+				if (!IsDisposed)
+				{
+					Invoke(LedSwitcher, txLedPicture);
+				}
 			});
 		}
 	}

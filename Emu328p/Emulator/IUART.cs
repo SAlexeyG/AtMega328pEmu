@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Emu328p.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Emu328p.Emulator
 {
 	public interface IUART
 	{
-		event Action<char> OnCharWriting;
+		event EventHandler<UARTEventArgs> OnCharWriting;
 		void WriteByte();
 	}
 }

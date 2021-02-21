@@ -1,25 +1,27 @@
-﻿using System;
+﻿using Emu328p.Emulator;
+using Emu328p.Tools;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Emu328p.Emulator;
 
 namespace Emu328p.GUI
 {
 	public partial class UART : Form
 	{
 		private IUART uartUnit = null;
-		private Action<char> AddSymbol; 
+		private Action<char> AddSymbol;
 
 		public UART()
 		{
 			InitializeComponent();
-			AddSymbol += (symbol) => textBox.Text += symbol;
+			AddSymbol = (symbol) => textBox.Text += symbol;
 		}
 
 		public void SetUARTUnit(IUART uartUnit)
@@ -33,9 +35,12 @@ namespace Emu328p.GUI
 			textBox.Text = "";
 		}
 
-		private void WriteChar(char symbol)
+		private void WriteChar(object sender, UARTEventArgs e)
 		{
-			Invoke(AddSymbol, symbol);
+			if (!IsDisposed)
+			{
+				Invoke(AddSymbol, e.Symbol);
+			}
 		}
 	}
 }

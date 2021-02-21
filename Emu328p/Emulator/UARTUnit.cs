@@ -1,4 +1,5 @@
 ﻿using Emu328p.GUI;
+using Emu328p.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Emu328p.Emulator
 	public class UARTUnit : IUART
 	{
 		private ISRAM sramManager;
-		public event Action<char> OnCharWriting;
+		public event EventHandler<UARTEventArgs> OnCharWriting;
 
 		public UARTUnit(ISRAM sramManager)
 		{
@@ -31,7 +32,7 @@ namespace Emu328p.Emulator
 			sramManager.SetByte(Registers.IO.UDR0, 0);
 			char[] charArray = Encoding.ASCII.GetChars(byteArray);
 
-			OnCharWriting?.Invoke(charArray[0]);
+			OnCharWriting?.Invoke(this, new UARTEventArgs(charArray[0]));
 		}
 	}
 }

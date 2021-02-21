@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Emu328p.Tools
 {
-	static class HexConverter
+	internal static class HexConverter
 	{
 		public static string ToHexString(this ushort opcode)
 		{

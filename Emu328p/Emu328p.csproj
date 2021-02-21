@@ -89,6 +89,7 @@
     <Compile Include="Tools\DecodedOperation.cs" />
     <Compile Include="Tools\FileReader.cs" />
     <Compile Include="Tools\HexConverter.cs" />
+    <Compile Include="Tools\UARTEventArgs.cs" />
     <EmbeddedResource Include="GUI\UART.resx">
       <DependentUpon>UART.cs</DependentUpon>
     </EmbeddedResource>
