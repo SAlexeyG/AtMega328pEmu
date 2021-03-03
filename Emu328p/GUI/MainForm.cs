@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
@@ -19,13 +20,22 @@ namespace Emu328p.GUI
 	public partial class MainForm : Form
 	{
 		private Controller microcontroller = null;
-		private Dictionary<string, Action> playType = new Dictionary<string, Action>();
+		private Dictionary<string, Action> playType = 
+			new Dictionary<string, Action>();
+
+		private Dictionary<string, Func<string, byte[]>> readers = 
+			new Dictionary<string, Func<string, byte[]>>();
+
 		private UART uartWindow;
 		private Action<PictureBox> LedSwitcher;
 
 		public MainForm()
 		{
 			InitializeComponent();
+
+			readers.Add(".bin", FileReader.ReadBin);
+			readers.Add(".hex", FileReader.ReadHex);
+
 			uartWindow = new UART();
 			uartWindow.Show();
 			uartWindow.Visible = false;
@@ -51,7 +61,7 @@ namespace Emu328p.GUI
 			}
 
 			string filePath = openFileDialog.FileName;
-			byte[] firmware = FileReader.ReadBin(filePath);
+			byte[] firmware = readers[filePath.Substring(filePath.Length - 4)](filePath);
 
 			microcontroller = new Controller(firmware);
 
