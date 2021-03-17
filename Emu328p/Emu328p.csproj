@@ -72,9 +72,7 @@
     <Compile Include="Emulator\Registers\IO.cs" />
     <Compile Include="Emulator\SRAMManager.cs" />
     <Compile Include="Emulator\UARTUnit.cs" />
-    <Compile Include="GUI\UART.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI\UART.cs" />
     <Compile Include="GUI\UART.Designer.cs">
       <DependentUpon>UART.cs</DependentUpon>
     </Compile>
