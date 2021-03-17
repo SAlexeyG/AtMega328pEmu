@@ -207,8 +207,11 @@ namespace Emu328p.GUI
 			this.Controls.Add(this.picturePanel);
 			this.Controls.Add(this.opcodeListBox);
 			this.Controls.Add(this.menuStrip);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MainMenuStrip = this.menuStrip;
+			this.MaximizeBox = false;
 			this.Name = "MainForm";
+			this.ShowIcon = false;
 			this.Text = "Emu328p";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.menuStrip.ResumeLayout(false);

@@ -39,11 +39,12 @@ namespace Emu328p.GUI
 			this.textBox.BackColor = System.Drawing.SystemColors.Control;
 			this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.textBox.Location = new System.Drawing.Point(12, 35);
+			this.textBox.Location = new System.Drawing.Point(12, 36);
 			this.textBox.Margin = new System.Windows.Forms.Padding(0);
 			this.textBox.Multiline = true;
 			this.textBox.Name = "textBox";
-			this.textBox.Size = new System.Drawing.Size(639, 348);
+			this.textBox.ReadOnly = true;
+			this.textBox.Size = new System.Drawing.Size(631, 339);
 			this.textBox.TabIndex = 0;
 			// 
 			// reciveTextBox
@@ -68,7 +69,7 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(656, 388);
+			this.ClientSize = new System.Drawing.Size(652, 384);
 			this.ControlBox = false;
 			this.Controls.Add(this.reciveButton);
 			this.Controls.Add(this.reciveTextBox);
