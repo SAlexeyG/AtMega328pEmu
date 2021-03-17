@@ -11,7 +11,10 @@ namespace Emu328p.Emulator
 	public class UARTUnit : IUART
 	{
 		private ISRAM sramManager;
+		private char skipSymbol = '\0';
+
 		public event EventHandler<UARTEventArgs> OnCharWriting;
+		public event EventHandler<UARTEventArgs> OnCharReading;
 
 		public UARTUnit(ISRAM sramManager)
 		{
@@ -24,8 +27,9 @@ namespace Emu328p.Emulator
 			byte[] byteArray = new byte[1];
 			byteArray[0] = sramManager.GetByte(Registers.IO.UDR0);
 
-			if (byteArray[0] == 0)
+			if (byteArray[0] == skipSymbol)
 			{
+				skipSymbol = '\0';
 				return;
 			}
 
@@ -33,6 +37,17 @@ namespace Emu328p.Emulator
 			char[] charArray = Encoding.ASCII.GetChars(byteArray);
 
 			OnCharWriting?.Invoke(this, new UARTEventArgs(charArray[0]));
+		}
+
+		public void ReadByte(char symbol)
+		{
+			skipSymbol = symbol;
+
+			char[] charArray = new char[] { symbol };
+			byte[] byteArray = Encoding.ASCII.GetBytes(charArray);
+
+			sramManager.SetByte(Registers.IO.UDR0, byteArray[0]);
+			OnCharReading?.Invoke(this, new UARTEventArgs(charArray[0]));
 		}
 	}
 }

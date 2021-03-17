@@ -13,6 +13,7 @@ namespace Emu328p.Emulator.Decoding
 		public Type7()
 		{
 			decodingTable.Add(0xf400, Brbc);
+			decodingTable.Add(0xf000, Brbs);
 		}
 
 		private void Brbc(ushort opcode, ISRAM sramManager, IFlash flashManager)
@@ -24,6 +25,20 @@ namespace Emu328p.Emulator.Decoding
 			sreg >>= 7;
 
 			if (sreg == 0)
+			{
+				flashManager.PC = offset;
+			}
+		}
+
+		private void Brbs(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			byte sreg = sramManager.GetByte(Registers.IO.SREG);
+			byte status = GetStatus(opcode);
+			uint offset = GetOffset(opcode, flashManager);
+			sreg <<= 7 - status;
+			sreg >>= 7;
+
+			if (sreg != 0)
 			{
 				flashManager.PC = offset;
 			}

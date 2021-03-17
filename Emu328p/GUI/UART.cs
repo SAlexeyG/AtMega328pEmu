@@ -42,5 +42,10 @@ namespace Emu328p.GUI
 				Invoke(AddSymbol, e.Symbol);
 			}
 		}
+
+		private void reciveButton_Click(object sender, EventArgs e)
+		{
+			uartUnit.ReadByte(reciveTextBox.Text[0]);
+		}
 	}
 }

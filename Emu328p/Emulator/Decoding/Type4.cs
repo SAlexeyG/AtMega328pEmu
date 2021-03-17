@@ -24,6 +24,18 @@ namespace Emu328p.Emulator.Decoding
 			decodingTable.Add(0x920e, StDec(Registers.GP.X));
 			decodingTable.Add(0x920A, StDec(Registers.GP.Y));
 			decodingTable.Add(0x9202, StDec(Registers.GP.Z));
+
+			decodingTable.Add(0x900c, Ld(Registers.GP.X));
+			decodingTable.Add(0x8008, Ld(Registers.GP.Y));
+			decodingTable.Add(0x8000, Ld(Registers.GP.Z));
+
+			decodingTable.Add(0x900d, LdInc(Registers.GP.X));
+			decodingTable.Add(0x9009, LdInc(Registers.GP.Y));
+			decodingTable.Add(0x9001, LdInc(Registers.GP.Z));
+
+			decodingTable.Add(0x900e, LdDec(Registers.GP.X));
+			decodingTable.Add(0x900a, LdDec(Registers.GP.X));
+			decodingTable.Add(0x9002, LdDec(Registers.GP.X));
 		}
 
 		private DecodedOperation St(uint register)
@@ -56,6 +68,38 @@ namespace Emu328p.Emulator.Decoding
 				offset--;
 				sramManager.SetWord(register, (ushort)offset);
 				byte value = sramManager.GetByte(GetDestination(opcode));
+				sramManager.SetByte(offset, value);
+			};
+		}
+
+		private DecodedOperation Ld(uint register)
+		{
+			return (ushort opcode, ISRAM sramManager, IFlash flashManager) =>
+			{
+				uint offset = GetDestination(opcode);
+				byte value = sramManager.GetByte(sramManager.GetWord(register));
+				sramManager.SetByte(offset, value);
+			};
+		}
+
+		private DecodedOperation LdInc(uint register)
+		{
+			return (ushort opcode, ISRAM sramManager, IFlash flashManager) =>
+			{
+				uint offset = GetDestination(opcode);
+				byte value = sramManager.GetByte(sramManager.GetWord(register));
+				sramManager.SetByte(offset, value);
+				sramManager.SetWord(register, (ushort)(sramManager.GetWord(register) + 1));
+			};
+		}
+
+		private DecodedOperation LdDec(uint register)
+		{
+			return (ushort opcode, ISRAM sramManager, IFlash flashManager) =>
+			{
+				uint offset = GetDestination(opcode);
+				sramManager.SetWord(register, (ushort)(sramManager.GetWord(register) - 1));
+				byte value = sramManager.GetByte(sramManager.GetWord(register));
 				sramManager.SetByte(offset, value);
 			};
 		}

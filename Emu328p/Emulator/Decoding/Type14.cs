@@ -13,11 +13,17 @@ namespace Emu328p.Emulator.Decoding
 		public Type14()
 		{
 			decodingTable.Add(0x9200, Sts);
+			decodingTable.Add(0x9000, Lds);
 		}
 
 		private void Sts(ushort opcode, ISRAM sramManager, IFlash flashManager)
 		{
-			sramManager.SetWord(flashManager.GetWord(), sramManager.GetByte(GetDestination(opcode)));
+			sramManager.SetByte(flashManager.GetWord(), sramManager.GetByte(GetDestination(opcode)));
+		}
+
+		private void Lds(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			sramManager.SetByte(GetDestination(opcode), sramManager.GetByte(flashManager.GetWord()));
 		}
 
 		private static uint GetDestination(ushort opcode)

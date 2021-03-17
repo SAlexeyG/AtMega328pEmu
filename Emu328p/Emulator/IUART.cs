@@ -10,6 +10,9 @@ namespace Emu328p.Emulator
 	public interface IUART
 	{
 		event EventHandler<UARTEventArgs> OnCharWriting;
+		event EventHandler<UARTEventArgs> OnCharReading;
+
 		void WriteByte();
+		void ReadByte(char symbol);
 	}
 }
