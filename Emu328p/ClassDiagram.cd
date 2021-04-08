@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Emu328p.Emulator.Controller" Collapsed="true">
+    <Position X="20" Y="1.75" Width="1.5" />
+    <AssociationLine Name="sramManager" Type="Emu328p.Emulator.ISRAM" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.031" Y="2.312" />
+        <Point X="21.031" Y="3.875" />
+        <Point X="22" Y="3.875" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAQAAEABABEBAAARAAAAAAAAAAAIBAAIAAAACA=</HashCode>
+      <FileName>Emulator\Controller.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="flashManager" />
+      <Field Name="sramManager" />
+      <Field Name="uartUnit" />
+      <Field Name="opcodeExecuter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Emu328p.Emulator.ExecutionUnit" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\ExecutionUnit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="decodingUnit" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Emu328p.Emulator.FlashManager" BaseTypeListCollapsed="true">
+    <Position X="19" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAIAAAAAAAEAEAAAAAAAAAAAgAAAAAAEA=</HashCode>
+      <FileName>Emulator\FlashManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Emu328p.Emulator.SRAMManager" BaseTypeListCollapsed="true">
+    <Position X="22" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAABEAAAAAAAAAAAAEAAAABABEA=</HashCode>
+      <FileName>Emulator\SRAMManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Emu328p.Emulator.UARTUnit" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAASAAAAAAAAEAgAAACAAAAACA=</HashCode>
+      <FileName>Emulator\UARTUnit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.157" />
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.DecodingUnit" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAQAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\DecodingUnit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="opcodeFormatTypes" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type" Collapsed="true">
+    <Position X="16.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEACACAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type1">
+    <Position X="13.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type11">
+    <Position X="17.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAACAAAAAAgAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type11.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type13">
+    <Position X="19.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQCBAAAIAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type13.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type14">
+    <Position X="19" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAAAAAAAAAAIAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type14.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type3">
+    <Position X="11.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAwAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type4">
+    <Position X="13.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAAAAhAAAACIEAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type5">
+    <Position X="15.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type5.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type7">
+    <Position X="15.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAKAAIAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type7.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type8">
+    <Position X="17.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type8.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Decoding.Type9">
+    <Position X="20.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAACCAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\Type9.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.GUI.MainForm" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CYABAECCQCAAQAACCBCDQACCAABIAAAAQECQUAIQAQI=</HashCode>
+      <FileName>GUI\MainForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="microcontroller" />
+      <Field Name="uartWindow" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Emu328p.GUI.UART" Collapsed="true">
+    <Position X="24.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAACCAAAAACIACABAACAEAAAAAEAAAAAABBAAA=</HashCode>
+      <FileName>GUI\UART.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="uartUnit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Emu328p.Tools.FileReader">
+    <Position X="24" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Tools\FileReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Tools.HexConverter">
+    <Position X="24" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Tools\HexConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Tools.UARTEventArgs">
+    <Position X="25.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Tools\UARTEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Emu328p.Emulator.IExecuter">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\IExecuter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Emu328p.Emulator.IFlash">
+    <Position X="19" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAEAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Emulator\IFlash.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Emu328p.Emulator.ISRAM">
+    <Position X="22" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAABEAAAAAAAAAAAAAAAAABABEA=</HashCode>
+      <FileName>Emulator\ISRAM.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Emu328p.Emulator.IUART">
+    <Position X="24.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAEAgAAACAAAAAAA=</HashCode>
+      <FileName>Emulator\IUART.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Emu328p.Emulator.Decoding.IDecodingUnit">
+    <Position X="14.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\IDecodingUnit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Emu328p.Emulator.Decoding.IOpcodeFormatType">
+    <Position X="16.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEACAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Emulator\Decoding\IOpcodeFormatType.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Delegate Name="Emu328p.Tools.DecodedOperation">
+    <Position X="26" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Tools\DecodedOperation.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

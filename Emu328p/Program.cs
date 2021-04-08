@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Emu328p.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,15 @@ namespace Emu328p
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new GUI.MainForm());
+
+			if (UserPrefs.IsNewUser())
+			{
+				Application.Run(new GUI.StartForm());
+			}
+			else
+			{
+				Application.Run(new GUI.PasswordCheckForm());
+			}
 		}
 	}
 }

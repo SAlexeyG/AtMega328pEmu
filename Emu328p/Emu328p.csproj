@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,7 +75,21 @@
     <Compile Include="Emulator\Registers\IO.cs" />
     <Compile Include="Emulator\SRAMManager.cs" />
     <Compile Include="Emulator\UARTUnit.cs" />
-    <Compile Include="GUI\UART.cs" />
+    <Compile Include="GUI\PasswordCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PasswordCheckForm.Designer.cs">
+      <DependentUpon>PasswordCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UART.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\UART.Designer.cs">
       <DependentUpon>UART.cs</DependentUpon>
     </Compile>
@@ -88,6 +105,13 @@
     <Compile Include="Tools\FileReader.cs" />
     <Compile Include="Tools\HexConverter.cs" />
     <Compile Include="Tools\UARTEventArgs.cs" />
+    <Compile Include="Tools\UserPrefs.cs" />
+    <EmbeddedResource Include="GUI\PasswordCheckForm.resx">
+      <DependentUpon>PasswordCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UART.resx">
       <DependentUpon>UART.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +128,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
