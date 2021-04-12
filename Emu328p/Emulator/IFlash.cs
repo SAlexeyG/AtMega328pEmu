@@ -8,6 +8,7 @@ namespace Emu328p.Emulator
 {
 	public interface IFlash
 	{
+		event Action OnPCChanged;
 		uint PC { get; set; }
 		byte GetByte();
 		ushort GetWord();

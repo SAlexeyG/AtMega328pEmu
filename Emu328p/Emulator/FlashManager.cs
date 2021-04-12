@@ -11,10 +11,16 @@ namespace Emu328p.Emulator
 		private byte[] flash = null;
 		private uint pc = 0;
 
+		public event Action OnPCChanged;
+
 		public uint PC
 		{
 			get => pc;
-			set => pc = value;
+			set 
+			{
+				pc = value;
+				OnPCChanged?.Invoke();
+			}
 		}
 
 		public FlashManager(byte[] firmware)
