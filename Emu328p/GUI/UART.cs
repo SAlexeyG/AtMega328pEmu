@@ -16,18 +16,18 @@ namespace Emu328p.GUI
 	public partial class UART : Form
 	{
 		private IUART uartUnit = null;
-		private Action<char> AddSymbol;
+		private Action<char> addSymbol;
 
 		public UART()
 		{
 			InitializeComponent();
-			AddSymbol = (symbol) => textBox.Text += symbol;
+			addSymbol = (symbol) => textBox.Text += symbol;
 		}
 
 		public void SetUARTUnit(IUART uartUnit)
 		{
 			this.uartUnit = uartUnit;
-			uartUnit.OnCharWriting += WriteChar;
+			this.uartUnit.OnCharWriting += WriteChar;
 		}
 
 		public void Clear()
@@ -39,7 +39,7 @@ namespace Emu328p.GUI
 		{
 			if (!IsDisposed)
 			{
-				Invoke(AddSymbol, e.Symbol);
+				Invoke(addSymbol, e.Symbol);
 			}
 		}
 

@@ -1,4 +1,5 @@
-﻿using Emu328p.Tools;
+﻿using Emu328p.Emulator;
+using Emu328p.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,27 +15,14 @@ namespace Emu328p.GUI
 {
 	public partial class BoardModel : Form
 	{
+		private Controller microcontroller;
 		private Action<PictureBox> LedSwitcher;
 
-		public bool IsTxLedActive
-		{
-			get => txLedPicture.Visible;
-			set => txLedPicture.Visible = value;
-		}
+		public bool IsTxLedActive => txLedPicture.Visible;
+		public bool IsRxLedActive => rxLedPicture.Visible;
+		public bool IsOnLedActive => onLedPicture.Visible;
 
-		public bool IsRxLedActive
-		{
-			get => rxLedPicture.Visible;
-			set => rxLedPicture.Visible = value;
-		}
-
-		public bool IsOnLedActive
-		{
-			get => onLedPicture.Visible;
-			set => onLedPicture.Visible = value;
-		}
-
-		public async void TXBlinckAsync(object sender, UARTEventArgs e)
+		private async void TXBlinckAsync(object sender, UARTEventArgs e)
 		{
 			await Task.Run(() =>
 			{
@@ -56,6 +44,23 @@ namespace Emu328p.GUI
 		{
 			LedSwitcher = (led) => led.Visible = !led.Visible;
 			InitializeComponent();
+		}
+
+		public void SetMicrocontroller(Controller microcontroller)
+		{
+			this.microcontroller = microcontroller;
+			this.microcontroller.OnStatusChanged += ChangeOnLed;
+			this.microcontroller.UartUnit.OnCharWriting += TXBlinckAsync;
+		}
+
+		private void ChangeOnLed() => onLedPicture.Visible = microcontroller.IsRunning;
+
+		private void BoardModel_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (microcontroller != null)
+			{
+				microcontroller.UartUnit.OnCharWriting -= TXBlinckAsync;
+			}
 		}
 	}
 }

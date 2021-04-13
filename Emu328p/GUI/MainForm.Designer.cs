@@ -34,12 +34,12 @@ namespace Emu328p.GUI
 			this.file_open = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuWindow = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuWindowUART = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuWindowBoardModel = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuWindowFirmware = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuPlayType = new System.Windows.Forms.ToolStripComboBox();
 			this.menuPlay = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStop = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-			this.menuWindowBoardModel = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuWindowFirmware = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -90,6 +90,22 @@ namespace Emu328p.GUI
 			this.menuWindowUART.Text = "UART";
 			this.menuWindowUART.Click += new System.EventHandler(this.menuWindowUART_Click);
 			// 
+			// menuWindowBoardModel
+			// 
+			this.menuWindowBoardModel.CheckOnClick = true;
+			this.menuWindowBoardModel.Name = "menuWindowBoardModel";
+			this.menuWindowBoardModel.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowBoardModel.Text = "Модель платы";
+			this.menuWindowBoardModel.Click += new System.EventHandler(this.menuWindowBoardModel_Click);
+			// 
+			// menuWindowFirmware
+			// 
+			this.menuWindowFirmware.CheckOnClick = true;
+			this.menuWindowFirmware.Name = "menuWindowFirmware";
+			this.menuWindowFirmware.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowFirmware.Text = "Прошивка";
+			this.menuWindowFirmware.Click += new System.EventHandler(this.menuWindowFirmware_Click);
+			// 
 			// menuPlayType
 			// 
 			this.menuPlayType.Items.AddRange(new object[] {
@@ -122,32 +138,14 @@ namespace Emu328p.GUI
 			this.openFileDialog.FileName = "openFileDialog1";
 			this.openFileDialog.Filter = "Binary files(*.bin)|*.bin|Hexadecimal files(*.hex)|*.hex|All files(*.*)|*.*";
 			// 
-			// menuWindowBoardModel
-			// 
-			this.menuWindowBoardModel.CheckOnClick = true;
-			this.menuWindowBoardModel.Name = "menuWindowBoardModel";
-			this.menuWindowBoardModel.Size = new System.Drawing.Size(180, 22);
-			this.menuWindowBoardModel.Text = "Модель платы";
-			this.menuWindowBoardModel.Click += new System.EventHandler(this.модельПлатыToolStripMenuItem_Click);
-			// 
-			// menuWindowFirmware
-			// 
-			this.menuWindowFirmware.CheckOnClick = true;
-			this.menuWindowFirmware.Name = "menuWindowFirmware";
-			this.menuWindowFirmware.Size = new System.Drawing.Size(180, 22);
-			this.menuWindowFirmware.Text = "Прошивка";
-			this.menuWindowFirmware.Click += new System.EventHandler(this.menuWindowFirmware_Click);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(769, 446);
 			this.Controls.Add(this.menuStrip);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuStrip;
-			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.ShowIcon = false;
 			this.Text = "Emu328p";

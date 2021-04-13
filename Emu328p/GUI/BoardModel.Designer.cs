@@ -110,6 +110,7 @@ namespace Emu328p.GUI
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "BoardModel";
 			this.Text = "1";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BoardModel_FormClosing);
 			this.picturePanel.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.resetButtonPicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.onLedPicture)).EndInit();

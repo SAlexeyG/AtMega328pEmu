@@ -10,6 +10,7 @@ namespace Emu328p.Emulator
 	{
 		event Action OnPCChanged;
 		uint PC { get; set; }
+		byte[] GetFirmware { get; }
 		byte GetByte();
 		ushort GetWord();
 		bool IsEndOfMemory();

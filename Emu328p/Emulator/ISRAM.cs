@@ -9,6 +9,7 @@ namespace Emu328p.Emulator
 	public interface ISRAM
 	{
 		event Action OnSRAMChanged;
+		byte[] GetSRAMData { get; }
 		byte GetByte(uint offset);
 		void SetByte(uint offset, byte value);
 		ushort GetWord(uint offset);

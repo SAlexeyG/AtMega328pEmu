@@ -23,6 +23,8 @@ namespace Emu328p.Emulator
 			}
 		}
 
+		public byte[] GetFirmware => flash;
+
 		public FlashManager(byte[] firmware)
 		{
 			flash = new byte[ControllerConfiguration.FLASH_AMOUNT_BYTES];

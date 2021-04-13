@@ -10,6 +10,8 @@ namespace Emu328p.Emulator
 	{
 		private byte[] sram = new byte[ControllerConfiguration.SRAM_AMOUNT_BYTES];
 
+		public byte[] GetSRAMData => sram;
+
 		public event Action OnSRAMChanged;
 
 		public void Clear()

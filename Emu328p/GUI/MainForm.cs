@@ -20,10 +20,10 @@ namespace Emu328p.GUI
 	public partial class MainForm : Form
 	{
 		private Controller microcontroller = null;
-		private Dictionary<string, Action> playType = 
+		private Dictionary<string, Action> playType =
 			new Dictionary<string, Action>();
 
-		private Dictionary<string, Func<string, byte[]>> readers = 
+		private Dictionary<string, Func<string, byte[]>> readers =
 			new Dictionary<string, Func<string, byte[]>>();
 
 		private UART uartWindow;
@@ -56,7 +56,6 @@ namespace Emu328p.GUI
 		private void menuPlay_Click(object sender, EventArgs e)
 		{
 			playType[menuPlayType.Text]?.Invoke();
-			boardWindow.IsOnLedActive = true;
 		}
 
 		private void menuWindowUART_Click(object sender, EventArgs e)
@@ -80,18 +79,15 @@ namespace Emu328p.GUI
 			playType.Add("Отладка", PlayDebugging);
 
 			menuPlay.Enabled = true;
-			firmwareWindow.FillOpcodeListBox(firmware);
+
 			uartWindow.SetUARTUnit(microcontroller.UartUnit);
-			microcontroller.UartUnit.OnCharWriting += boardWindow.TXBlinckAsync;
+			boardWindow.SetMicrocontroller(microcontroller);
+			firmwareWindow.SetFlashManager(microcontroller.FlashManager);
 		}
 
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (microcontroller != null)
-			{
-				microcontroller.UartUnit.OnCharWriting -= boardWindow.TXBlinckAsync;
-				microcontroller.Stop();
-			}
+			microcontroller?.Stop();
 		}
 
 		private void menuStop_Click(object sender, EventArgs e)
@@ -131,16 +127,14 @@ namespace Emu328p.GUI
 			menuPlay.Text = "Далее";
 			playType["Отладка"] -= PlayDebugging;
 			playType["Отладка"] += DebugNext;
-			firmwareWindow.SelectedOpcode = (int)microcontroller.FlashManager.PC / 2;
 		}
 
 		private void DebugNext()
 		{
 			microcontroller.ExecuteOneAsync();
-			firmwareWindow.SelectedOpcode = (int)microcontroller.FlashManager.PC / 2;
 		}
 
-		private void модельПлатыToolStripMenuItem_Click(object sender, EventArgs e)
+		private void menuWindowBoardModel_Click(object sender, EventArgs e)
 		{
 			boardWindow.Visible = menuWindowBoardModel.Checked;
 		}
