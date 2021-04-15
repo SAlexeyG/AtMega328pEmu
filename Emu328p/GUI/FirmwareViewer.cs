@@ -14,7 +14,7 @@ namespace Emu328p.GUI
 {
 	public partial class FirmwareViewer : Form
 	{
-		private IFlash flashManager;
+		private Controller microcontroller;
 		private Action changeListBoxSelectedIndex;
 
 		private void FillOpcodeListBox(byte[] firmware)
@@ -28,22 +28,23 @@ namespace Emu328p.GUI
 			}
 		}
 
-		public void SetFlashManager(IFlash flashManager)
+		public void SetFlashManager(Controller microcontroller)
 		{
-			this.flashManager = flashManager;
-			this.flashManager.OnPCChanged += UpdateListBox;
-			FillOpcodeListBox(this.flashManager.GetFirmware);
+			this.microcontroller = microcontroller;
+			this.microcontroller.FlashManager.OnPCChanged += UpdateListBox;
+			FillOpcodeListBox(this.microcontroller.FlashManager.GetFirmware);
 		}
 
 		private void UpdateListBox()
 		{
+			if (microcontroller.IsRunning) return;
 			Invoke(changeListBoxSelectedIndex);
 		}
 
 		public FirmwareViewer()
 		{
 			changeListBoxSelectedIndex = 
-				() => opcodeListBox.SelectedIndex = (int)flashManager.PC / 2;
+				() => opcodeListBox.SelectedIndex = (int)microcontroller.FlashManager.PC / 2;
 			InitializeComponent();
 		}
 	}

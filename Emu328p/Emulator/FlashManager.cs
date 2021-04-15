@@ -33,22 +33,22 @@ namespace Emu328p.Emulator
 
 		public byte GetByte()
 		{
-			pc++;
-			return flash[pc];
+			PC++;
+			return flash[PC];
 		}
 
 		public ushort GetWord()
 		{
-			ushort value = flash[pc + 1];
+			ushort value = flash[PC + 1];
 			value <<= 8;
-			value |= flash[pc];
-			pc += 2;
+			value |= flash[PC];
+			PC += 2;
 			return value;
 		}
 
 		public bool IsEndOfMemory()
 		{
-			return pc == ControllerConfiguration.FLASH_AMOUNT_BYTES - 1;
+			return PC == ControllerConfiguration.FLASH_AMOUNT_BYTES - 1;
 		}
 	}
 }

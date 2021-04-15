@@ -82,7 +82,7 @@ namespace Emu328p.GUI
 
 			uartWindow.SetUARTUnit(microcontroller.UartUnit);
 			boardWindow.SetMicrocontroller(microcontroller);
-			firmwareWindow.SetFlashManager(microcontroller.FlashManager);
+			firmwareWindow.SetFlashManager(microcontroller);
 		}
 
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
