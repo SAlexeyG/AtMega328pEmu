@@ -20,6 +20,12 @@ namespace Emu328p.GUI
 
 		private void registrateButton_Click(object sender, EventArgs e)
 		{
+			if(!MailManager.IsMailValid(mailTextBox.Text))
+			{
+				MessageBox.Show("Неверный формат почты");
+				return;
+			}
+
 			UserPrefs.SaveUserPrefs(Environment.UserName, passwordTextBox.Text, mailTextBox.Text);
 			var checkForm = new PasswordCheckForm();
 			checkForm.Show();

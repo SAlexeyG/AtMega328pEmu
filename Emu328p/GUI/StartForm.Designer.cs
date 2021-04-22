@@ -32,8 +32,8 @@ namespace Emu328p.GUI
 			this.passwordLabel = new System.Windows.Forms.Label();
 			this.mailLabel = new System.Windows.Forms.Label();
 			this.passwordTextBox = new System.Windows.Forms.TextBox();
-			this.mailTextBox = new System.Windows.Forms.TextBox();
 			this.registrateButton = new System.Windows.Forms.Button();
+			this.mailTextBox = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// passwordLabel
@@ -61,13 +61,6 @@ namespace Emu328p.GUI
 			this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
 			this.passwordTextBox.TabIndex = 2;
 			// 
-			// mailTextBox
-			// 
-			this.mailTextBox.Location = new System.Drawing.Point(71, 32);
-			this.mailTextBox.Name = "mailTextBox";
-			this.mailTextBox.Size = new System.Drawing.Size(100, 20);
-			this.mailTextBox.TabIndex = 3;
-			// 
 			// registrateButton
 			// 
 			this.registrateButton.Location = new System.Drawing.Point(12, 58);
@@ -78,13 +71,20 @@ namespace Emu328p.GUI
 			this.registrateButton.UseVisualStyleBackColor = true;
 			this.registrateButton.Click += new System.EventHandler(this.registrateButton_Click);
 			// 
+			// mailTextBox
+			// 
+			this.mailTextBox.Location = new System.Drawing.Point(71, 32);
+			this.mailTextBox.Name = "mailTextBox";
+			this.mailTextBox.Size = new System.Drawing.Size(100, 20);
+			this.mailTextBox.TabIndex = 5;
+			// 
 			// StartForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(183, 90);
-			this.Controls.Add(this.registrateButton);
 			this.Controls.Add(this.mailTextBox);
+			this.Controls.Add(this.registrateButton);
 			this.Controls.Add(this.passwordTextBox);
 			this.Controls.Add(this.mailLabel);
 			this.Controls.Add(this.passwordLabel);
@@ -100,7 +100,7 @@ namespace Emu328p.GUI
 		private System.Windows.Forms.Label passwordLabel;
 		private System.Windows.Forms.Label mailLabel;
 		private System.Windows.Forms.TextBox passwordTextBox;
-		private System.Windows.Forms.TextBox mailTextBox;
 		private System.Windows.Forms.Button registrateButton;
+		private System.Windows.Forms.TextBox mailTextBox;
 	}
 }
