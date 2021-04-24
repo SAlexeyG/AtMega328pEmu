@@ -29,6 +29,7 @@ namespace Emu328p.GUI
 		private UART uartWindow;
 		private BoardModel boardWindow;
 		private FirmwareViewer firmwareWindow;
+		private Cabinet cabinetWindow;
 
 		public MainForm()
 		{
@@ -51,6 +52,11 @@ namespace Emu328p.GUI
 			firmwareWindow.MdiParent = this;
 			firmwareWindow.Show();
 			firmwareWindow.Visible = false;
+
+			cabinetWindow = new Cabinet();
+			cabinetWindow.MdiParent = this;
+			cabinetWindow.Show();
+			cabinetWindow.Visible = false;
 		}
 
 		private void menuPlay_Click(object sender, EventArgs e)
@@ -58,10 +64,6 @@ namespace Emu328p.GUI
 			playType[menuPlayType.Text]?.Invoke();
 		}
 
-		private void menuWindowUART_Click(object sender, EventArgs e)
-		{
-			uartWindow.Visible = menuWindowUART.Checked;
-		}
 
 		private void file_open_Click(object sender, EventArgs e)
 		{
@@ -142,6 +144,16 @@ namespace Emu328p.GUI
 		private void menuWindowFirmware_Click(object sender, EventArgs e)
 		{
 			firmwareWindow.Visible = menuWindowFirmware.Checked;
+		}
+
+		private void menuWindowUART_Click(object sender, EventArgs e)
+		{
+			uartWindow.Visible = menuWindowUART.Checked;
+		}
+
+		private void menuWindowUser_Click(object sender, EventArgs e)
+		{
+			cabinetWindow.Visible = menuWindowUser.Checked;
 		}
 	}
 }

@@ -16,6 +16,7 @@ namespace Emu328p.GUI
 		public StartForm()
 		{
 			InitializeComponent();
+			greatingLabel.Text += Environment.UserName + "!";
 		}
 
 		private void registrateButton_Click(object sender, EventArgs e)

@@ -37,5 +37,10 @@ namespace Emu328p.GUI
 		{
 			UserPrefs.LoadUserPrefs();
 		}
+
+		private void changePassLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			new NewPass().Show();
+		}
 	}
 }
