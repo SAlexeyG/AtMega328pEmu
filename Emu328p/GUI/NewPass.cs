@@ -54,5 +54,11 @@ namespace Emu328p.GUI
 		{
 			SendSecretCode();
 		}
+
+		private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar != '\r') return;
+			checkButton_Click(sender, e);
+		}
 	}
 }

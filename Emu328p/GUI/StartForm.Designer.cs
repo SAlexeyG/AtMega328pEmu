@@ -61,15 +61,17 @@ namespace Emu328p.GUI
 			// 
 			this.passwordTextBox.Location = new System.Drawing.Point(12, 113);
 			this.passwordTextBox.Name = "passwordTextBox";
+			this.passwordTextBox.PasswordChar = '*';
 			this.passwordTextBox.Size = new System.Drawing.Size(292, 20);
 			this.passwordTextBox.TabIndex = 2;
+			this.passwordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
 			// 
 			// registrateButton
 			// 
 			this.registrateButton.Location = new System.Drawing.Point(12, 178);
 			this.registrateButton.Name = "registrateButton";
 			this.registrateButton.Size = new System.Drawing.Size(129, 23);
-			this.registrateButton.TabIndex = 4;
+			this.registrateButton.TabIndex = 100;
 			this.registrateButton.Text = "Зарегистрироваться";
 			this.registrateButton.UseVisualStyleBackColor = true;
 			this.registrateButton.Click += new System.EventHandler(this.registrateButton_Click);
@@ -79,7 +81,8 @@ namespace Emu328p.GUI
 			this.mailTextBox.Location = new System.Drawing.Point(12, 152);
 			this.mailTextBox.Name = "mailTextBox";
 			this.mailTextBox.Size = new System.Drawing.Size(291, 20);
-			this.mailTextBox.TabIndex = 5;
+			this.mailTextBox.TabIndex = 3;
+			this.mailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
 			// 
 			// greatingLabel
 			// 

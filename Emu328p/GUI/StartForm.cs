@@ -33,5 +33,11 @@ namespace Emu328p.GUI
 			checkForm.FormClosed += (sender1, e1) => Close();
 			Visible = false;
 		}
+
+		private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar != '\r') return;
+			registrateButton_Click(sender, e);
+		}
 	}
 }

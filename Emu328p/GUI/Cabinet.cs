@@ -34,6 +34,7 @@ namespace Emu328p.GUI
 			UserPrefs.SaveUserPrefs(loginTextBox.Text, passTextBox.Text, mailTextBox.Text);
 			UserPrefs.LoadUserPrefs();
 			MessageBox.Show("Данные успешно изменены");
+			userInfoTextBox_TextChanged(sender, e);
 		}
 	}
 }

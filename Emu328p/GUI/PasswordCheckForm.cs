@@ -15,7 +15,9 @@ namespace Emu328p.GUI
 	{
 		public PasswordCheckForm()
 		{
+			UserPrefs.LoadUserPrefs();
 			InitializeComponent();
+			greatingLabel.Text += UserPrefs.Login + "!";
 		}
 
 		private void checkButton_Click(object sender, EventArgs e)
@@ -33,14 +35,15 @@ namespace Emu328p.GUI
 			}
 		}
 
-		private void PasswordCheckForm_Load(object sender, EventArgs e)
-		{
-			UserPrefs.LoadUserPrefs();
-		}
-
 		private void changePassLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			new NewPass().Show();
+		}
+
+		private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar != '\r') return;
+			checkButton_Click(sender, e);
 		}
 	}
 }

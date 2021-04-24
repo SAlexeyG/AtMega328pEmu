@@ -51,13 +51,13 @@ namespace Emu328p.GUI
 			this.picturePanel.Controls.Add(this.rxLedPicture);
 			this.picturePanel.Location = new System.Drawing.Point(12, 12);
 			this.picturePanel.Name = "picturePanel";
-			this.picturePanel.Size = new System.Drawing.Size(535, 403);
+			this.picturePanel.Size = new System.Drawing.Size(270, 403);
 			this.picturePanel.TabIndex = 4;
 			// 
 			// resetButtonPicture
 			// 
 			this.resetButtonPicture.BackColor = System.Drawing.Color.Transparent;
-			this.resetButtonPicture.Location = new System.Drawing.Point(366, 78);
+			this.resetButtonPicture.Location = new System.Drawing.Point(233, 78);
 			this.resetButtonPicture.Name = "resetButtonPicture";
 			this.resetButtonPicture.Size = new System.Drawing.Size(15, 15);
 			this.resetButtonPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -68,7 +68,7 @@ namespace Emu328p.GUI
 			// 
 			this.onLedPicture.BackColor = System.Drawing.Color.Transparent;
 			this.onLedPicture.Image = global::Emu328p.Properties.Resources.OnLED;
-			this.onLedPicture.Location = new System.Drawing.Point(307, 316);
+			this.onLedPicture.Location = new System.Drawing.Point(174, 316);
 			this.onLedPicture.Name = "onLedPicture";
 			this.onLedPicture.Size = new System.Drawing.Size(32, 32);
 			this.onLedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,7 +80,7 @@ namespace Emu328p.GUI
 			// 
 			this.txLedPicture.BackColor = System.Drawing.Color.Transparent;
 			this.txLedPicture.Image = global::Emu328p.Properties.Resources.LED;
-			this.txLedPicture.Location = new System.Drawing.Point(304, 153);
+			this.txLedPicture.Location = new System.Drawing.Point(171, 153);
 			this.txLedPicture.Name = "txLedPicture";
 			this.txLedPicture.Size = new System.Drawing.Size(32, 32);
 			this.txLedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -92,7 +92,7 @@ namespace Emu328p.GUI
 			// 
 			this.rxLedPicture.BackColor = System.Drawing.Color.Transparent;
 			this.rxLedPicture.Image = global::Emu328p.Properties.Resources.LED;
-			this.rxLedPicture.Location = new System.Drawing.Point(296, 153);
+			this.rxLedPicture.Location = new System.Drawing.Point(163, 153);
 			this.rxLedPicture.Name = "rxLedPicture";
 			this.rxLedPicture.Size = new System.Drawing.Size(32, 32);
 			this.rxLedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,12 +104,12 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(559, 428);
+			this.ClientSize = new System.Drawing.Size(303, 428);
 			this.ControlBox = false;
 			this.Controls.Add(this.picturePanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "BoardModel";
-			this.Text = "1";
+			this.Text = "Модель платы";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BoardModel_FormClosing);
 			this.picturePanel.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.resetButtonPicture)).EndInit();

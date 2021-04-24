@@ -52,7 +52,7 @@ namespace Emu328p.GUI
 			this.loginTextBox.Location = new System.Drawing.Point(85, 12);
 			this.loginTextBox.Name = "loginTextBox";
 			this.loginTextBox.Size = new System.Drawing.Size(100, 20);
-			this.loginTextBox.TabIndex = 1;
+			this.loginTextBox.TabIndex = 2;
 			this.loginTextBox.TextChanged += new System.EventHandler(this.userInfoTextBox_TextChanged);
 			// 
 			// passTextBox
@@ -77,7 +77,7 @@ namespace Emu328p.GUI
 			this.mailTextBox.Location = new System.Drawing.Point(85, 64);
 			this.mailTextBox.Name = "mailTextBox";
 			this.mailTextBox.Size = new System.Drawing.Size(100, 20);
-			this.mailTextBox.TabIndex = 5;
+			this.mailTextBox.TabIndex = 4;
 			this.mailTextBox.TextChanged += new System.EventHandler(this.userInfoTextBox_TextChanged);
 			// 
 			// mailLabel
@@ -95,7 +95,7 @@ namespace Emu328p.GUI
 			this.changeButton.Location = new System.Drawing.Point(15, 90);
 			this.changeButton.Name = "changeButton";
 			this.changeButton.Size = new System.Drawing.Size(75, 23);
-			this.changeButton.TabIndex = 6;
+			this.changeButton.TabIndex = 100;
 			this.changeButton.Text = "Изменить";
 			this.changeButton.UseVisualStyleBackColor = true;
 			this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
@@ -104,7 +104,7 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(198, 124);
+			this.ClientSize = new System.Drawing.Size(194, 120);
 			this.ControlBox = false;
 			this.Controls.Add(this.changeButton);
 			this.Controls.Add(this.mailTextBox);
@@ -118,7 +118,7 @@ namespace Emu328p.GUI
 			this.MinimizeBox = false;
 			this.Name = "Cabinet";
 			this.ShowIcon = false;
-			this.Text = "Cabinet";
+			this.Text = "Личный кабинет";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
