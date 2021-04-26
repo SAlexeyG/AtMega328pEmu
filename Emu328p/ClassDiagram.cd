@@ -5,19 +5,19 @@
     <AssociationLine Name="sramManager" Type="Emu328p.Emulator.ISRAM" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="21.031" Y="2.312" />
-        <Point X="21.031" Y="3.875" />
-        <Point X="22" Y="3.875" />
+        <Point X="21.031" Y="3.375" />
+        <Point X="22" Y="3.375" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAQAQAAEABABEBAAARAAAAAAAAAAAIBAAIAAAACA=</HashCode>
+      <HashCode>AAAAAQAQAAEABABEBAAARAAAAAAAAAAAIBAgIAAAACA=</HashCode>
       <FileName>Emulator\Controller.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="flashManager" />
       <Field Name="sramManager" />
-      <Field Name="uartUnit" />
+      <Field Name="flashManager" />
       <Field Name="opcodeExecuter" />
+      <Field Name="uartUnit" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Emu328p.Emulator.ExecutionUnit" BaseTypeListCollapsed="true">
@@ -32,9 +32,9 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Emu328p.Emulator.FlashManager" BaseTypeListCollapsed="true">
-    <Position X="19" Y="5.5" Width="1.5" />
+    <Position X="20" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAAAAIAAAAAAAEAEAAAAAAAAAAAgAAAAAAEA=</HashCode>
+      <HashCode>ACAAAAAAAAAAIAAAAAAAUAECAAAAAAAAAAgAAAAAAEA=</HashCode>
       <FileName>Emulator\FlashManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -42,7 +42,7 @@
   <Class Name="Emu328p.Emulator.SRAMManager" BaseTypeListCollapsed="true">
     <Position X="22" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAABEAAAAAAAAAAAAEAAAABABEA=</HashCode>
+      <HashCode>AAAAACAAQAAAAAAAAAABEAAAAAAAAAAAAEAAAABABEA=</HashCode>
       <FileName>Emulator\SRAMManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -67,7 +67,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type" Collapsed="true">
-    <Position X="16.25" Y="7.5" Width="1.5" />
+    <Position X="13.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEACACAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type.cs</FileName>
@@ -75,70 +75,70 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type1">
-    <Position X="13.5" Y="9" Width="1.5" />
+    <Position X="11" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAQAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type11">
-    <Position X="17.25" Y="12" Width="1.5" />
+    <Position X="14.75" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQAACAAAAAAgAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type11.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type13">
-    <Position X="19.25" Y="11.75" Width="1.5" />
+    <Position X="16.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEQCBAAAIAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type13.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type14">
-    <Position X="19" Y="9" Width="1.5" />
+    <Position X="16.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEQAAAAAAAAAAAAAAAIAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type14.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type3">
-    <Position X="11.75" Y="9" Width="1.5" />
+    <Position X="9.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAwAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type3.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type4">
-    <Position X="13.5" Y="12" Width="1.5" />
+    <Position X="11" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEQAAAAAAAAAhAAAACIEAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type4.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type5">
-    <Position X="15.25" Y="12" Width="1.5" />
+    <Position X="12.75" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type5.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type7">
-    <Position X="15.25" Y="9" Width="1.5" />
+    <Position X="12.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAgAAAKAAIAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type7.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type8">
-    <Position X="17.25" Y="9.25" Width="1.5" />
+    <Position X="14.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type8.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Emulator.Decoding.Type9">
-    <Position X="20.75" Y="9" Width="1.5" />
+    <Position X="18.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAACCAAAAAA=</HashCode>
       <FileName>Emulator\Decoding\Type9.cs</FileName>
@@ -147,7 +147,7 @@
   <Class Name="Emu328p.GUI.MainForm" Collapsed="true">
     <Position X="20" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CYABAECCQCAAQAACCBCDQACCAABIAAAAQECQUAIQAQI=</HashCode>
+      <HashCode>CYABAEGAACAAQACGCACJQAACiAgIAAAAQUCQUAIQAAA=</HashCode>
       <FileName>GUI\MainForm.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -158,7 +158,7 @@
   <Class Name="Emu328p.GUI.UART" Collapsed="true">
     <Position X="24.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAACCAAAAACIACABAACAEAAAAAEAAAAAABBAAA=</HashCode>
+      <HashCode>AAEAEAAACCAAAAACIACABAACAEAAAAAEAAAAAABAAAA=</HashCode>
       <FileName>GUI\UART.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -166,24 +166,127 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Emu328p.Tools.FileReader">
-    <Position X="24" Y="12.25" Width="1.5" />
+    <Position X="21.75" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Tools\FileReader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Tools.HexConverter">
-    <Position X="24" Y="10.25" Width="1.5" />
+    <Position X="20" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Tools\HexConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Emu328p.Tools.UARTEventArgs">
-    <Position X="25.75" Y="8.75" Width="1.5" />
+    <Position X="21.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Tools\UARTEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.ControllerConfiguration" Collapsed="true">
+    <Position X="27.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAABAAAAAAAAAAAAAAAAFAAAgAAAABA=</HashCode>
+      <FileName>Emulator\ControllerConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Registers.GP" Collapsed="true">
+    <Position X="24" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAASAAAAAAAAAAAIBAIAAAAAAgAAAAgQAQAAAAYAE=</HashCode>
+      <FileName>Emulator\Registers\GP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Emulator.Registers.IO" Collapsed="true">
+    <Position X="25.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>WvBPAJAFLWiYQIACAhACCADgAJGggAAgEAIFIEAqUQs=</HashCode>
+      <FileName>Emulator\Registers\IO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.GUI.BoardModel" Collapsed="true">
+    <Position X="24" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAACQCgAQAAAABCCAAACAgBAAAAABAAAAAQAAQA=</HashCode>
+      <FileName>GUI\BoardModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.GUI.Cabinet" Collapsed="true">
+    <Position X="25.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAAAKAAAAAIAACAAAACACAAACACAEAAAAAAAAE=</HashCode>
+      <FileName>GUI\Cabinet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.GUI.FirmwareViewer" Collapsed="true">
+    <Position X="29.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAASAAQAAACACAAACCAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>GUI\FirmwareViewer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.GUI.NewPass" Collapsed="true">
+    <Position X="29.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAEEBAAEBCABAACAAIAAAAAAEAgABAAEAA=</HashCode>
+      <FileName>GUI\NewPass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.GUI.PasswordCheckForm" Collapsed="true">
+    <Position X="24" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAgAGAEABAAACCABCACAAAAAAAAAAAwAAAAAAA=</HashCode>
+      <FileName>GUI\PasswordCheckForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.GUI.StartForm" Collapsed="true">
+    <Position X="24" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAOAEABACACCAAAACAAAAAAACAAAAAABAAAA=</HashCode>
+      <FileName>GUI\StartForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Program" Collapsed="true">
+    <Position X="25.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Properties.Resources" Collapsed="true">
+    <Position X="27.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAQAAgAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Properties.Settings" Collapsed="true">
+    <Position X="29.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAACAhAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Tools.MailManager" Collapsed="true">
+    <Position X="27.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAAAAAAAAAAgCAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tools\MailManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Tools.User" Collapsed="true">
+    <Position X="25.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAQAQAAAAA=</HashCode>
+      <FileName>Tools\UserPrefs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emu328p.Tools.UserPrefs" Collapsed="true">
+    <Position X="27.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAEAAAAAAAAAAAAAACAkASCQAAAQA=</HashCode>
+      <FileName>Tools\UserPrefs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Emu328p.Emulator.IExecuter">
@@ -194,16 +297,16 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Emu328p.Emulator.IFlash">
-    <Position X="19" Y="3" Width="1.5" />
+    <Position X="18.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAEAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAUAECAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Emulator\IFlash.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Emu328p.Emulator.ISRAM">
-    <Position X="22" Y="3" Width="1.5" />
+    <Position X="22" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAABEAAAAAAAAAAAAAAAAABABEA=</HashCode>
+      <HashCode>AAAAACAAQAAAAAAAAAABEAAAAAAAAAAAAAAAAABABEA=</HashCode>
       <FileName>Emulator\ISRAM.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -229,7 +332,7 @@
     </TypeIdentifier>
   </Interface>
   <Delegate Name="Emu328p.Tools.DecodedOperation">
-    <Position X="26" Y="11" Width="1.5" />
+    <Position X="19.75" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
       <FileName>Tools\DecodedOperation.cs</FileName>
