@@ -77,6 +77,7 @@ namespace Emu328p.GUI
 
 			microcontroller = new Controller(firmware);
 
+			playType.Clear();
 			playType.Add("Запуск", PlayRunning);
 			playType.Add("Отладка", PlayDebugging);
 
