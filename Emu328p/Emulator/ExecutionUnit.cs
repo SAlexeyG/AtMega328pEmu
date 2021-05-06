@@ -1,4 +1,5 @@
 ﻿using Emu328p.Emulator.Decoding;
+using Emu328p.GUI;
 using Emu328p.Tools;
 using System;
 using System.Collections.Generic;
@@ -21,23 +22,11 @@ namespace Emu328p.Emulator
 
 			if (action == null)
 			{
-				MessageBox.Show($"Opcode {Convert.ToString(opcode, 16)} does not defined");
+				new FatalErrorForm(new UndefinedOpcodeException($"Opcode {opcode.ToHexString()} does not defined")).ShowDialog();
 				return false;
 			}
 
 			action.Invoke(opcode, sramManager, flashManager);
-
-			//try
-			//{
-			//	action.Invoke(opcode, sramManager, flashManager);
-			//}
-			//catch (Exception ex)
-			//{
-			//	MessageBox.Show($"{ex.Message}", $"{Convert.ToString(flashManager.PC, 16)} - Error with opcode " +
-			//		$"{Convert.ToString(opcode, 16)}");
-			//	return false;
-			//}
-
 			return true;
 		}
 	}

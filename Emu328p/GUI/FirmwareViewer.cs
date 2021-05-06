@@ -44,7 +44,7 @@ namespace Emu328p.GUI
 		public FirmwareViewer()
 		{
 			changeListBoxSelectedIndex = 
-				() => opcodeListBox.SelectedIndex = (int)microcontroller.FlashManager.PC / 2;
+				() => opcodeListBox.SelectedIndex = (int)(microcontroller.FlashManager.PC / 2);
 			InitializeComponent();
 		}
 	}
