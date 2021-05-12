@@ -104,7 +104,7 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(194, 120);
+			this.ClientSize = new System.Drawing.Size(190, 116);
 			this.ControlBox = false;
 			this.Controls.Add(this.changeButton);
 			this.Controls.Add(this.mailTextBox);
@@ -114,10 +114,12 @@ namespace Emu328p.GUI
 			this.Controls.Add(this.loginTextBox);
 			this.Controls.Add(this.loginLabel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Location = new System.Drawing.Point(702, 467);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "Cabinet";
 			this.ShowIcon = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Личный кабинет";
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -137,12 +137,6 @@ namespace Emu328p.GUI
 			microcontroller.ExecuteOneAsync();
 		}
 
-		private void FatalErrorCatched(Exception exception)
-		{
-			menuStop_Click(this, new EventArgs());
-			new FatalErrorForm(exception).Show();
-		}
-
 		private void menuWindowBoardModel_Click(object sender, EventArgs e)
 		{
 			boardWindow.Visible = menuWindowBoardModel.Checked;

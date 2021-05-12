@@ -20,6 +20,7 @@ namespace Emu328p.Emulator
 			ushort opcode = flashManager.GetWord();
 			DecodedOperation action = decodingUnit.Decode(opcode);
 
+			//TODO: remove GUI from controller
 			if (action == null)
 			{
 				new FatalErrorForm(new UndefinedOpcodeException($"Opcode {opcode.ToHexString()} does not defined")).ShowDialog();

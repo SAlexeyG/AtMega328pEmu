@@ -22,6 +22,7 @@ namespace Emu328p.GUI
 		{
 			InitializeComponent();
 			addSymbol = (symbol) => textBox.Text += symbol;
+
 		}
 
 		public void SetUARTUnit(IUART uartUnit)

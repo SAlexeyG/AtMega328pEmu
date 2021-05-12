@@ -19,6 +19,7 @@ namespace Emu328p.GUI
 
 		private void FillOpcodeListBox(byte[] firmware)
 		{
+			opcodeListBox.Items.Clear();
 			for (int i = 0; i < firmware.Length; i += 2)
 			{
 				ushort opcode = firmware[i + 1];
