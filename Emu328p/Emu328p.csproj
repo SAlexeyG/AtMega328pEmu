@@ -198,5 +198,17 @@
   <ItemGroup>
     <None Include="Resources\OnLED.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_200_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_50_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

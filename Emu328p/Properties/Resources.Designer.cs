@@ -73,6 +73,16 @@ namespace Emu328p.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_50_hover {
+            get {
+                object obj = ResourceManager.GetObject("button_50_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LED {
             get {
                 object obj = ResourceManager.GetObject("LED", resourceCulture);
@@ -86,6 +96,16 @@ namespace Emu328p.Properties {
         internal static System.Drawing.Bitmap OnLED {
             get {
                 object obj = ResourceManager.GetObject("OnLED", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap repeat {
+            get {
+                object obj = ResourceManager.GetObject("repeat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

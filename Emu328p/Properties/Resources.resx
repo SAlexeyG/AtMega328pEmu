@@ -121,10 +121,16 @@
   <data name="LED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="OnLED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OnLED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="arduino-board2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arduino-board2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OnLED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OnLED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_50_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_50_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repeat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
