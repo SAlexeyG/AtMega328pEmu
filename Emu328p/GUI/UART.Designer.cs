@@ -48,7 +48,7 @@ namespace Emu328p.GUI
 			this.textBox.Name = "textBox";
 			this.textBox.ReadOnly = true;
 			this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox.Size = new System.Drawing.Size(668, 48);
+			this.textBox.Size = new System.Drawing.Size(668, 31);
 			this.textBox.TabIndex = 0;
 			// 
 			// reciveTextBox
@@ -73,12 +73,12 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(686, 93);
+			this.ClientSize = new System.Drawing.Size(686, 97);
 			this.ControlBox = false;
 			this.Controls.Add(this.reciveButton);
 			this.Controls.Add(this.reciveTextBox);
 			this.Controls.Add(this.textBox);
-			this.Location = new System.Drawing.Point(0, 467);
+			this.Location = new System.Drawing.Point(0, 485);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(220, 130);

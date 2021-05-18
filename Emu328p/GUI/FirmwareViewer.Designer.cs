@@ -49,7 +49,7 @@ namespace Emu328p.GUI
 			this.opcodeListBox.Margin = new System.Windows.Forms.Padding(0);
 			this.opcodeListBox.MultiColumn = true;
 			this.opcodeListBox.Name = "opcodeListBox";
-			this.opcodeListBox.Size = new System.Drawing.Size(555, 408);
+			this.opcodeListBox.Size = new System.Drawing.Size(558, 426);
 			this.opcodeListBox.TabIndex = 2;
 			// 
 			// FirmwareViewer
@@ -57,7 +57,7 @@ namespace Emu328p.GUI
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(573, 428);
+			this.ClientSize = new System.Drawing.Size(576, 446);
 			this.ControlBox = false;
 			this.Controls.Add(this.opcodeListBox);
 			this.MaximizeBox = false;

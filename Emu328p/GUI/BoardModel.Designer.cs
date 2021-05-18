@@ -138,7 +138,7 @@ namespace Emu328p.GUI
 			this.Controls.Add(this.toolStrip);
 			this.Controls.Add(this.picturePanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.Location = new System.Drawing.Point(589, 0);
+			this.Location = new System.Drawing.Point(592, 0);
 			this.Name = "BoardModel";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Модель платы";

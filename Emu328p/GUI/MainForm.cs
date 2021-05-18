@@ -61,7 +61,7 @@ namespace Emu328p.GUI
 
 		private void menuPlay_Click(object sender, EventArgs e)
 		{
-			playType[menuPlayType.Text]?.Invoke();
+			playType[toolStripPlayType.Text]?.Invoke();
 		}
 
 
@@ -81,7 +81,7 @@ namespace Emu328p.GUI
 			playType.Add("Запуск", PlayRunning);
 			playType.Add("Отладка", PlayDebugging);
 
-			menuPlay.Enabled = true;
+			toolStripPlay.Enabled = true;
 
 			uartWindow.SetUARTUnit(microcontroller.UartUnit);
 			boardWindow.SetMicrocontroller(microcontroller);
@@ -95,12 +95,13 @@ namespace Emu328p.GUI
 
 		private void menuStop_Click(object sender, EventArgs e)
 		{
-			menuPlayType.Enabled = true;
-			menuStop.Enabled = false;
-			menuPlay.Enabled = true;
-			menuPlay.Text = "Пуск";
+			toolStripPlayType.Enabled = true;
+			toolStripStop.Enabled = false;
+			toolStripPlay.Enabled = true;
+			toolStripPlay.Text = "Пуск";
 
 			playType["Отладка"] -= DebugNext;
+			playType["Отладка"] -= PlayDebugging;
 			playType["Отладка"] += PlayDebugging;
 
 			microcontroller.Stop();
@@ -117,17 +118,17 @@ namespace Emu328p.GUI
 
 		private void PlayRunning()
 		{
-			menuPlayType.Enabled = false;
-			menuStop.Enabled = true;
-			menuPlay.Enabled = false;
+			toolStripPlayType.Enabled = false;
+			toolStripStop.Enabled = true;
+			toolStripPlay.Enabled = false;
 			microcontroller.RunAsync();
 		}
 
 		private void PlayDebugging()
 		{
-			menuPlayType.Enabled = false;
-			menuStop.Enabled = true;
-			menuPlay.Text = "Далее";
+			toolStripPlayType.Enabled = false;
+			toolStripStop.Enabled = true;
+			toolStripPlay.Text = "Далее";
 			playType["Отладка"] -= PlayDebugging;
 			playType["Отладка"] += DebugNext;
 		}
