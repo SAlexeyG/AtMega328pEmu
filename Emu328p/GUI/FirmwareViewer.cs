@@ -48,5 +48,47 @@ namespace Emu328p.GUI
 				() => opcodeListBox.SelectedIndex = (int)(microcontroller.FlashManager.PC / 2);
 			InitializeComponent();
 		}
+
+		private void cancelButton_Click(object sender, EventArgs e)
+		{
+			changePanel.Visible = false;
+		}
+
+		private void changeButton_Click(object sender, EventArgs e)
+		{
+			if (!newOpcodeTextBox.MaskFull)
+			{
+				MessageBox.Show("Введите значение в поле ввода");
+				return;
+			}
+
+			ushort opcode;
+			uint offset = (uint)opcodeListBox.SelectedIndex * 2;
+
+			try
+			{
+				opcode = (ushort)Convert.ToInt32(newOpcodeTextBox.Text.Substring(2).ToLower(), 16);
+			}
+			catch (Exception)
+			{
+				MessageBox.Show("Неверный формат ввода");
+				return;
+			}
+
+			if(offset < 0)
+			{
+				MessageBox.Show("Выберите изменяемое значение");
+				return;
+			}
+
+			microcontroller.FlashManager.SetWord(offset, opcode);
+			FillOpcodeListBox(this.microcontroller.FlashManager.GetFirmware);
+		}
+
+		private void opcodeListBox_DoubleClick(object sender, EventArgs e)
+		{
+			if (microcontroller.IsRunning) return;
+			changePanel.Visible = true;
+		}
 	}
 }

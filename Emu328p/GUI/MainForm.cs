@@ -88,6 +88,17 @@ namespace Emu328p.GUI
 			firmwareWindow.SetFlashManager(microcontroller);
 		}
 
+		private void menuFileSaveAs_Click(object sender, EventArgs e)
+		{
+			if(saveFileDialog.ShowDialog() == DialogResult.Cancel)
+			{
+				return;
+			}
+
+			string filePath = saveFileDialog.FileName;
+			FileWriter.WriteBin(filePath, microcontroller != null ? microcontroller.FlashManager.GetFirmware : new byte[] { 0 });
+		}
+
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			microcontroller?.Stop();

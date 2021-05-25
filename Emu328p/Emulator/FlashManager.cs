@@ -50,5 +50,11 @@ namespace Emu328p.Emulator
 		{
 			return PC == ControllerConfiguration.FLASH_AMOUNT_BYTES - 1;
 		}
+
+		public void SetWord(uint offset, ushort value)
+		{
+			flash[offset] = (byte)(value & 0x00ff);
+			flash[offset + 1] = (byte)(value >> 8);
+		}
 	}
 }

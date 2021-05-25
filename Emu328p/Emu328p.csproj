@@ -134,6 +134,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\DecodedOperation.cs" />
     <Compile Include="Tools\FileReader.cs" />
+    <Compile Include="Tools\FileWriter.cs" />
     <Compile Include="Tools\HexConverter.cs" />
     <Compile Include="Tools\MailManager.cs" />
     <Compile Include="Tools\UARTEventArgs.cs" />

@@ -13,6 +13,7 @@ namespace Emu328p.Emulator
 		byte[] GetFirmware { get; }
 		byte GetByte();
 		ushort GetWord();
+		void SetWord(uint offset, ushort value);
 		bool IsEndOfMemory();
 	}
 }

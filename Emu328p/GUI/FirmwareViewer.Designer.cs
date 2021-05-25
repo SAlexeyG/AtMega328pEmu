@@ -30,6 +30,12 @@ namespace Emu328p.GUI
 		private void InitializeComponent()
 		{
 			this.opcodeListBox = new System.Windows.Forms.ListBox();
+			this.changePanel = new System.Windows.Forms.Panel();
+			this.newOpcodeTextBox = new System.Windows.Forms.MaskedTextBox();
+			this.cancelButton = new System.Windows.Forms.Button();
+			this.changeButton = new System.Windows.Forms.Button();
+			this.newOpcodeLabel = new System.Windows.Forms.Label();
+			this.changePanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// opcodeListBox
@@ -51,6 +57,57 @@ namespace Emu328p.GUI
 			this.opcodeListBox.Name = "opcodeListBox";
 			this.opcodeListBox.Size = new System.Drawing.Size(558, 426);
 			this.opcodeListBox.TabIndex = 2;
+			this.opcodeListBox.DoubleClick += new System.EventHandler(this.opcodeListBox_DoubleClick);
+			// 
+			// changePanel
+			// 
+			this.changePanel.BackColor = System.Drawing.Color.White;
+			this.changePanel.Controls.Add(this.newOpcodeLabel);
+			this.changePanel.Controls.Add(this.changeButton);
+			this.changePanel.Controls.Add(this.cancelButton);
+			this.changePanel.Controls.Add(this.newOpcodeTextBox);
+			this.changePanel.Location = new System.Drawing.Point(9, 9);
+			this.changePanel.Name = "changePanel";
+			this.changePanel.Size = new System.Drawing.Size(227, 89);
+			this.changePanel.TabIndex = 3;
+			this.changePanel.Visible = false;
+			// 
+			// newOpcodeTextBox
+			// 
+			this.newOpcodeTextBox.Location = new System.Drawing.Point(98, 3);
+			this.newOpcodeTextBox.Mask = "\\0x>A>A>A>A";
+			this.newOpcodeTextBox.Name = "newOpcodeTextBox";
+			this.newOpcodeTextBox.Size = new System.Drawing.Size(123, 20);
+			this.newOpcodeTextBox.TabIndex = 4;
+			// 
+			// cancelButton
+			// 
+			this.cancelButton.Location = new System.Drawing.Point(3, 63);
+			this.cancelButton.Name = "cancelButton";
+			this.cancelButton.Size = new System.Drawing.Size(75, 23);
+			this.cancelButton.TabIndex = 5;
+			this.cancelButton.Text = "Закрыть";
+			this.cancelButton.UseVisualStyleBackColor = true;
+			this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+			// 
+			// changeButton
+			// 
+			this.changeButton.Location = new System.Drawing.Point(146, 63);
+			this.changeButton.Name = "changeButton";
+			this.changeButton.Size = new System.Drawing.Size(75, 23);
+			this.changeButton.TabIndex = 6;
+			this.changeButton.Text = "Изменить";
+			this.changeButton.UseVisualStyleBackColor = true;
+			this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
+			// 
+			// newOpcodeLabel
+			// 
+			this.newOpcodeLabel.AutoSize = true;
+			this.newOpcodeLabel.Location = new System.Drawing.Point(3, 6);
+			this.newOpcodeLabel.Name = "newOpcodeLabel";
+			this.newOpcodeLabel.Size = new System.Drawing.Size(89, 13);
+			this.newOpcodeLabel.TabIndex = 7;
+			this.newOpcodeLabel.Text = "Новое значение";
 			// 
 			// FirmwareViewer
 			// 
@@ -59,6 +116,7 @@ namespace Emu328p.GUI
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(576, 446);
 			this.ControlBox = false;
+			this.Controls.Add(this.changePanel);
 			this.Controls.Add(this.opcodeListBox);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
@@ -66,6 +124,8 @@ namespace Emu328p.GUI
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Прошивка";
+			this.changePanel.ResumeLayout(false);
+			this.changePanel.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -73,5 +133,10 @@ namespace Emu328p.GUI
 		#endregion
 
 		private System.Windows.Forms.ListBox opcodeListBox;
+		private System.Windows.Forms.Panel changePanel;
+		private System.Windows.Forms.Label newOpcodeLabel;
+		private System.Windows.Forms.Button changeButton;
+		private System.Windows.Forms.Button cancelButton;
+		private System.Windows.Forms.MaskedTextBox newOpcodeTextBox;
 	}
 }
