@@ -76,6 +76,12 @@
     <Compile Include="Emulator\Registers\IO.cs" />
     <Compile Include="Emulator\SRAMManager.cs" />
     <Compile Include="Emulator\UARTUnit.cs" />
+    <Compile Include="GUI\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\BoardModel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="GUI\FirmwareViewer.Designer.cs">
       <DependentUpon>FirmwareViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NewPass.cs">
       <SubType>Form</SubType>
@@ -140,6 +152,9 @@
     <Compile Include="Tools\UARTEventArgs.cs" />
     <Compile Include="Tools\UndefinedOpcodeException.cs" />
     <Compile Include="Tools\UserPrefs.cs" />
+    <EmbeddedResource Include="GUI\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\BoardModel.resx">
       <DependentUpon>BoardModel.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FirmwareViewer.resx">
       <DependentUpon>FirmwareViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NewPass.resx">
       <DependentUpon>NewPass.cs</DependentUpon>

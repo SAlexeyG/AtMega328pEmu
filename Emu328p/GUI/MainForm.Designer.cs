@@ -32,12 +32,14 @@ namespace Emu328p.GUI
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
 			this.file_open = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuWindow = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuWindowUART = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuWindowBoardModel = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuWindowFirmware = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuWindowSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.menuWindowUser = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuWindowAbout = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -45,8 +47,8 @@ namespace Emu328p.GUI
 			this.toolStripPlay = new System.Windows.Forms.ToolStripButton();
 			this.toolStripStop = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-			this.menuFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+			this.menuWindowHelp = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.toolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -74,9 +76,16 @@ namespace Emu328p.GUI
 			// file_open
 			// 
 			this.file_open.Name = "file_open";
-			this.file_open.Size = new System.Drawing.Size(180, 22);
+			this.file_open.Size = new System.Drawing.Size(163, 22);
 			this.file_open.Text = "Открыть...";
 			this.file_open.Click += new System.EventHandler(this.file_open_Click);
+			// 
+			// menuFileSaveAs
+			// 
+			this.menuFileSaveAs.Name = "menuFileSaveAs";
+			this.menuFileSaveAs.Size = new System.Drawing.Size(163, 22);
+			this.menuFileSaveAs.Text = "Сохранить как...";
+			this.menuFileSaveAs.Click += new System.EventHandler(this.menuFileSaveAs_Click);
 			// 
 			// menuWindow
 			// 
@@ -85,7 +94,9 @@ namespace Emu328p.GUI
             this.menuWindowBoardModel,
             this.menuWindowFirmware,
             this.menuWindowSeparator,
-            this.menuWindowUser});
+            this.menuWindowUser,
+            this.menuWindowAbout,
+            this.menuWindowHelp});
 			this.menuWindow.Name = "menuWindow";
 			this.menuWindow.Size = new System.Drawing.Size(48, 20);
 			this.menuWindow.Text = "Окно";
@@ -94,7 +105,7 @@ namespace Emu328p.GUI
 			// 
 			this.menuWindowUART.CheckOnClick = true;
 			this.menuWindowUART.Name = "menuWindowUART";
-			this.menuWindowUART.Size = new System.Drawing.Size(166, 22);
+			this.menuWindowUART.Size = new System.Drawing.Size(180, 22);
 			this.menuWindowUART.Text = "UART";
 			this.menuWindowUART.Click += new System.EventHandler(this.menuWindowUART_Click);
 			// 
@@ -102,7 +113,7 @@ namespace Emu328p.GUI
 			// 
 			this.menuWindowBoardModel.CheckOnClick = true;
 			this.menuWindowBoardModel.Name = "menuWindowBoardModel";
-			this.menuWindowBoardModel.Size = new System.Drawing.Size(166, 22);
+			this.menuWindowBoardModel.Size = new System.Drawing.Size(180, 22);
 			this.menuWindowBoardModel.Text = "Модель платы";
 			this.menuWindowBoardModel.Click += new System.EventHandler(this.menuWindowBoardModel_Click);
 			// 
@@ -110,22 +121,30 @@ namespace Emu328p.GUI
 			// 
 			this.menuWindowFirmware.CheckOnClick = true;
 			this.menuWindowFirmware.Name = "menuWindowFirmware";
-			this.menuWindowFirmware.Size = new System.Drawing.Size(166, 22);
+			this.menuWindowFirmware.Size = new System.Drawing.Size(180, 22);
 			this.menuWindowFirmware.Text = "Прошивка";
 			this.menuWindowFirmware.Click += new System.EventHandler(this.menuWindowFirmware_Click);
 			// 
 			// menuWindowSeparator
 			// 
 			this.menuWindowSeparator.Name = "menuWindowSeparator";
-			this.menuWindowSeparator.Size = new System.Drawing.Size(163, 6);
+			this.menuWindowSeparator.Size = new System.Drawing.Size(177, 6);
 			// 
 			// menuWindowUser
 			// 
 			this.menuWindowUser.CheckOnClick = true;
 			this.menuWindowUser.Name = "menuWindowUser";
-			this.menuWindowUser.Size = new System.Drawing.Size(166, 22);
+			this.menuWindowUser.Size = new System.Drawing.Size(180, 22);
 			this.menuWindowUser.Text = "Личный кабинет";
 			this.menuWindowUser.Click += new System.EventHandler(this.menuWindowUser_Click);
+			// 
+			// menuWindowAbout
+			// 
+			this.menuWindowAbout.CheckOnClick = true;
+			this.menuWindowAbout.Name = "menuWindowAbout";
+			this.menuWindowAbout.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowAbout.Text = "О Программе";
+			this.menuWindowAbout.Click += new System.EventHandler(this.menuWindowAbout_Click);
 			// 
 			// openFileDialog
 			// 
@@ -192,16 +211,17 @@ namespace Emu328p.GUI
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
 			this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
 			// 
-			// menuFileSaveAs
-			// 
-			this.menuFileSaveAs.Name = "menuFileSaveAs";
-			this.menuFileSaveAs.Size = new System.Drawing.Size(180, 22);
-			this.menuFileSaveAs.Text = "Сохранить как...";
-			this.menuFileSaveAs.Click += new System.EventHandler(this.menuFileSaveAs_Click);
-			// 
 			// saveFileDialog
 			// 
 			this.saveFileDialog.Filter = "Binary files(*.bin)|*.bin";
+			// 
+			// menuWindowHelp
+			// 
+			this.menuWindowHelp.CheckOnClick = true;
+			this.menuWindowHelp.Name = "menuWindowHelp";
+			this.menuWindowHelp.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowHelp.Text = "Справка";
+			this.menuWindowHelp.Click += new System.EventHandler(this.menuWindowHelp_Click);
 			// 
 			// MainForm
 			// 
@@ -246,6 +266,8 @@ namespace Emu328p.GUI
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 		private System.Windows.Forms.ToolStripMenuItem menuFileSaveAs;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
+		private System.Windows.Forms.ToolStripMenuItem menuWindowAbout;
+		private System.Windows.Forms.ToolStripMenuItem menuWindowHelp;
 	}
 }
 

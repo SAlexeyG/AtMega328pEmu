@@ -30,6 +30,8 @@ namespace Emu328p.GUI
 		private BoardModel boardWindow;
 		private FirmwareViewer firmwareWindow;
 		private Cabinet cabinetWindow;
+		private About aboutWindow;
+		private Help helpWindow;
 
 		public MainForm()
 		{
@@ -57,6 +59,16 @@ namespace Emu328p.GUI
 			cabinetWindow.MdiParent = this;
 			cabinetWindow.Show();
 			cabinetWindow.Visible = false;
+
+			aboutWindow = new About();
+			aboutWindow.MdiParent = this;
+			aboutWindow.Show();
+			aboutWindow.Visible = false;
+
+			helpWindow = new Help();
+			helpWindow.MdiParent = this;
+			helpWindow.Show();
+			helpWindow.Visible = false;
 		}
 
 		private void menuPlay_Click(object sender, EventArgs e)
@@ -167,6 +179,16 @@ namespace Emu328p.GUI
 		private void menuWindowUser_Click(object sender, EventArgs e)
 		{
 			cabinetWindow.Visible = menuWindowUser.Checked;
+		}
+
+		private void menuWindowAbout_Click(object sender, EventArgs e)
+		{
+			aboutWindow.Visible = menuWindowAbout.Checked;
+		}
+
+		private void menuWindowHelp_Click(object sender, EventArgs e)
+		{
+			helpWindow.Visible = menuWindowHelp.Checked;
 		}
 	}
 }
