@@ -1,4 +1,5 @@
 ﻿using Emu328p.Tools;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Emu328p.GUI
 {
-	public partial class PasswordCheckForm : Form
+	public partial class PasswordCheckForm : MetroForm
 	{
 		public PasswordCheckForm()
 		{

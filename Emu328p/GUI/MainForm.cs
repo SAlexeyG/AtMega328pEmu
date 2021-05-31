@@ -14,10 +14,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Controls;
+using MetroFramework.Forms;
 
 namespace Emu328p.GUI
 {
-	public partial class MainForm : Form
+	public partial class MainForm : MetroForm
 	{
 		private Controller microcontroller = null;
 		private Dictionary<string, Action> playType =

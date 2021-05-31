@@ -40,6 +40,7 @@ namespace Emu328p.GUI
 			this.menuWindowSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.menuWindowUser = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuWindowAbout = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuWindowHelp = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -48,7 +49,6 @@ namespace Emu328p.GUI
 			this.toolStripStop = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-			this.menuWindowHelp = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.toolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -58,9 +58,9 @@ namespace Emu328p.GUI
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuFile,
             this.menuWindow});
-			this.menuStrip.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip.Location = new System.Drawing.Point(20, 60);
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(915, 24);
+			this.menuStrip.Size = new System.Drawing.Size(875, 24);
 			this.menuStrip.TabIndex = 0;
 			this.menuStrip.Text = "menuStrip1";
 			// 
@@ -105,7 +105,7 @@ namespace Emu328p.GUI
 			// 
 			this.menuWindowUART.CheckOnClick = true;
 			this.menuWindowUART.Name = "menuWindowUART";
-			this.menuWindowUART.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowUART.Size = new System.Drawing.Size(166, 22);
 			this.menuWindowUART.Text = "UART";
 			this.menuWindowUART.Click += new System.EventHandler(this.menuWindowUART_Click);
 			// 
@@ -113,7 +113,7 @@ namespace Emu328p.GUI
 			// 
 			this.menuWindowBoardModel.CheckOnClick = true;
 			this.menuWindowBoardModel.Name = "menuWindowBoardModel";
-			this.menuWindowBoardModel.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowBoardModel.Size = new System.Drawing.Size(166, 22);
 			this.menuWindowBoardModel.Text = "Модель платы";
 			this.menuWindowBoardModel.Click += new System.EventHandler(this.menuWindowBoardModel_Click);
 			// 
@@ -121,20 +121,20 @@ namespace Emu328p.GUI
 			// 
 			this.menuWindowFirmware.CheckOnClick = true;
 			this.menuWindowFirmware.Name = "menuWindowFirmware";
-			this.menuWindowFirmware.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowFirmware.Size = new System.Drawing.Size(166, 22);
 			this.menuWindowFirmware.Text = "Прошивка";
 			this.menuWindowFirmware.Click += new System.EventHandler(this.menuWindowFirmware_Click);
 			// 
 			// menuWindowSeparator
 			// 
 			this.menuWindowSeparator.Name = "menuWindowSeparator";
-			this.menuWindowSeparator.Size = new System.Drawing.Size(177, 6);
+			this.menuWindowSeparator.Size = new System.Drawing.Size(163, 6);
 			// 
 			// menuWindowUser
 			// 
 			this.menuWindowUser.CheckOnClick = true;
 			this.menuWindowUser.Name = "menuWindowUser";
-			this.menuWindowUser.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowUser.Size = new System.Drawing.Size(166, 22);
 			this.menuWindowUser.Text = "Личный кабинет";
 			this.menuWindowUser.Click += new System.EventHandler(this.menuWindowUser_Click);
 			// 
@@ -142,9 +142,17 @@ namespace Emu328p.GUI
 			// 
 			this.menuWindowAbout.CheckOnClick = true;
 			this.menuWindowAbout.Name = "menuWindowAbout";
-			this.menuWindowAbout.Size = new System.Drawing.Size(180, 22);
+			this.menuWindowAbout.Size = new System.Drawing.Size(166, 22);
 			this.menuWindowAbout.Text = "О Программе";
 			this.menuWindowAbout.Click += new System.EventHandler(this.menuWindowAbout_Click);
+			// 
+			// menuWindowHelp
+			// 
+			this.menuWindowHelp.CheckOnClick = true;
+			this.menuWindowHelp.Name = "menuWindowHelp";
+			this.menuWindowHelp.Size = new System.Drawing.Size(166, 22);
+			this.menuWindowHelp.Text = "Справка";
+			this.menuWindowHelp.Click += new System.EventHandler(this.menuWindowHelp_Click);
 			// 
 			// openFileDialog
 			// 
@@ -159,9 +167,9 @@ namespace Emu328p.GUI
             this.toolStripPlay,
             this.toolStripStop,
             this.toolStripSeparator3});
-			this.toolStrip.Location = new System.Drawing.Point(0, 24);
+			this.toolStrip.Location = new System.Drawing.Point(20, 84);
 			this.toolStrip.Name = "toolStrip";
-			this.toolStrip.Size = new System.Drawing.Size(915, 25);
+			this.toolStrip.Size = new System.Drawing.Size(875, 25);
 			this.toolStrip.TabIndex = 2;
 			this.toolStrip.Text = "toolStrip";
 			// 
@@ -215,14 +223,6 @@ namespace Emu328p.GUI
 			// 
 			this.saveFileDialog.Filter = "Binary files(*.bin)|*.bin";
 			// 
-			// menuWindowHelp
-			// 
-			this.menuWindowHelp.CheckOnClick = true;
-			this.menuWindowHelp.Name = "menuWindowHelp";
-			this.menuWindowHelp.Size = new System.Drawing.Size(180, 22);
-			this.menuWindowHelp.Text = "Справка";
-			this.menuWindowHelp.Click += new System.EventHandler(this.menuWindowHelp_Click);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,8 +234,8 @@ namespace Emu328p.GUI
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MainForm";
 			this.ShowIcon = false;
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Emu328p";
+			this.TransparencyKey = System.Drawing.Color.Empty;
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();

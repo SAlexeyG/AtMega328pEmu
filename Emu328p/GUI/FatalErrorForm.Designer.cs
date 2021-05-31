@@ -29,36 +29,57 @@ namespace Emu328p.GUI
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.errorTextBox = new System.Windows.Forms.TextBox();
-			this.okButton = new System.Windows.Forms.Button();
+			this.errorTextBox = new MetroFramework.Controls.MetroTextBox();
+			this.okButton = new MetroFramework.Controls.MetroButton();
 			this.sendErrorLabel = new System.Windows.Forms.LinkLabel();
 			this.SuspendLayout();
 			// 
 			// errorTextBox
 			// 
 			this.errorTextBox.BackColor = System.Drawing.SystemColors.Control;
-			this.errorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.errorTextBox.Location = new System.Drawing.Point(12, 12);
+			// 
+			// 
+			// 
+			this.errorTextBox.CustomButton.Image = null;
+			this.errorTextBox.CustomButton.Location = new System.Drawing.Point(287, 2);
+			this.errorTextBox.CustomButton.Name = "";
+			this.errorTextBox.CustomButton.Size = new System.Drawing.Size(83, 83);
+			this.errorTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+			this.errorTextBox.CustomButton.TabIndex = 1;
+			this.errorTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+			this.errorTextBox.CustomButton.UseSelectable = true;
+			this.errorTextBox.CustomButton.Visible = false;
+			this.errorTextBox.Lines = new string[0];
+			this.errorTextBox.Location = new System.Drawing.Point(23, 63);
+			this.errorTextBox.MaxLength = 32767;
 			this.errorTextBox.Multiline = true;
 			this.errorTextBox.Name = "errorTextBox";
+			this.errorTextBox.PasswordChar = '\0';
 			this.errorTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.errorTextBox.SelectedText = "";
+			this.errorTextBox.SelectionLength = 0;
+			this.errorTextBox.SelectionStart = 0;
+			this.errorTextBox.ShortcutsEnabled = true;
 			this.errorTextBox.Size = new System.Drawing.Size(373, 88);
 			this.errorTextBox.TabIndex = 0;
+			this.errorTextBox.UseSelectable = true;
+			this.errorTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+			this.errorTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
 			// 
 			// okButton
 			// 
-			this.okButton.Location = new System.Drawing.Point(310, 106);
+			this.okButton.Location = new System.Drawing.Point(321, 157);
 			this.okButton.Name = "okButton";
 			this.okButton.Size = new System.Drawing.Size(75, 23);
 			this.okButton.TabIndex = 1;
 			this.okButton.Text = "OK";
-			this.okButton.UseVisualStyleBackColor = true;
+			this.okButton.UseSelectable = true;
 			this.okButton.Click += new System.EventHandler(this.okButton_Click);
 			// 
 			// sendErrorLabel
 			// 
 			this.sendErrorLabel.AutoSize = true;
-			this.sendErrorLabel.Location = new System.Drawing.Point(12, 111);
+			this.sendErrorLabel.Location = new System.Drawing.Point(23, 167);
 			this.sendErrorLabel.Name = "sendErrorLabel";
 			this.sendErrorLabel.Size = new System.Drawing.Size(114, 13);
 			this.sendErrorLabel.TabIndex = 2;
@@ -70,14 +91,14 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(397, 141);
+			this.ClientSize = new System.Drawing.Size(422, 211);
 			this.Controls.Add(this.sendErrorLabel);
 			this.Controls.Add(this.okButton);
 			this.Controls.Add(this.errorTextBox);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "FatalErrorForm";
+			this.Resizable = false;
 			this.ShowIcon = false;
 			this.Text = "Критическая ошибка";
 			this.ResumeLayout(false);
@@ -87,8 +108,8 @@ namespace Emu328p.GUI
 
 		#endregion
 
-		private System.Windows.Forms.TextBox errorTextBox;
-		private System.Windows.Forms.Button okButton;
+		private MetroFramework.Controls.MetroTextBox errorTextBox;
+		private MetroFramework.Controls.MetroButton okButton;
 		private System.Windows.Forms.LinkLabel sendErrorLabel;
 	}
 }

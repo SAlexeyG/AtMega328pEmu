@@ -47,11 +47,13 @@ namespace Emu328p.GUI
 			// 
 			// toolStrip
 			// 
+			this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
+			this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripRotateButton});
-			this.toolStrip.Location = new System.Drawing.Point(0, 0);
+			this.toolStrip.Location = new System.Drawing.Point(3, 7);
 			this.toolStrip.Name = "toolStrip";
-			this.toolStrip.Size = new System.Drawing.Size(303, 25);
+			this.toolStrip.Size = new System.Drawing.Size(26, 25);
 			this.toolStrip.TabIndex = 5;
 			this.toolStrip.Text = "toolStrip1";
 			// 
@@ -137,9 +139,9 @@ namespace Emu328p.GUI
 			this.ControlBox = false;
 			this.Controls.Add(this.toolStrip);
 			this.Controls.Add(this.picturePanel);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Location = new System.Drawing.Point(592, 0);
 			this.Name = "BoardModel";
+			this.Resizable = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Модель платы";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BoardModel_FormClosing);

@@ -1,5 +1,6 @@
 ﻿using Emu328p.Emulator;
 using Emu328p.Tools;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Emu328p.GUI
 {
-	public partial class UART : Form
+	public partial class UART : MetroForm
 	{
 		private IUART uartUnit = null;
 		private Action<char> addSymbol;
