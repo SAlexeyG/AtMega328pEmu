@@ -51,11 +51,11 @@ namespace Emu328p.GUI
 			this.opcodeListBox.FormattingEnabled = true;
 			this.opcodeListBox.IntegralHeight = false;
 			this.opcodeListBox.ItemHeight = 19;
-			this.opcodeListBox.Location = new System.Drawing.Point(9, 9);
+			this.opcodeListBox.Location = new System.Drawing.Point(20, 60);
 			this.opcodeListBox.Margin = new System.Windows.Forms.Padding(0);
 			this.opcodeListBox.MultiColumn = true;
 			this.opcodeListBox.Name = "opcodeListBox";
-			this.opcodeListBox.Size = new System.Drawing.Size(558, 428);
+			this.opcodeListBox.Size = new System.Drawing.Size(510, 408);
 			this.opcodeListBox.TabIndex = 2;
 			this.opcodeListBox.DoubleClick += new System.EventHandler(this.opcodeListBox_DoubleClick);
 			// 
@@ -66,7 +66,7 @@ namespace Emu328p.GUI
 			this.changePanel.Controls.Add(this.changeButton);
 			this.changePanel.Controls.Add(this.cancelButton);
 			this.changePanel.Controls.Add(this.newOpcodeTextBox);
-			this.changePanel.Location = new System.Drawing.Point(9, 9);
+			this.changePanel.Location = new System.Drawing.Point(20, 60);
 			this.changePanel.Name = "changePanel";
 			this.changePanel.Size = new System.Drawing.Size(227, 89);
 			this.changePanel.TabIndex = 3;
@@ -113,8 +113,7 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(576, 446);
+			this.ClientSize = new System.Drawing.Size(550, 488);
 			this.ControlBox = false;
 			this.Controls.Add(this.changePanel);
 			this.Controls.Add(this.opcodeListBox);

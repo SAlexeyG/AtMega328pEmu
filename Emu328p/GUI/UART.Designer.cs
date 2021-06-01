@@ -44,16 +44,16 @@ namespace Emu328p.GUI
 			// 
 			// 
 			this.textBox.CustomButton.Image = null;
-			this.textBox.CustomButton.Location = new System.Drawing.Point(596, 2);
+			this.textBox.CustomButton.Location = new System.Drawing.Point(531, 2);
 			this.textBox.CustomButton.Name = "";
-			this.textBox.CustomButton.Size = new System.Drawing.Size(69, 69);
+			this.textBox.CustomButton.Size = new System.Drawing.Size(65, 65);
 			this.textBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
 			this.textBox.CustomButton.TabIndex = 1;
 			this.textBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
 			this.textBox.CustomButton.UseSelectable = true;
 			this.textBox.CustomButton.Visible = false;
 			this.textBox.Lines = new string[0];
-			this.textBox.Location = new System.Drawing.Point(9, 36);
+			this.textBox.Location = new System.Drawing.Point(23, 86);
 			this.textBox.Margin = new System.Windows.Forms.Padding(0);
 			this.textBox.MaxLength = 32767;
 			this.textBox.Multiline = true;
@@ -65,7 +65,7 @@ namespace Emu328p.GUI
 			this.textBox.SelectionLength = 0;
 			this.textBox.SelectionStart = 0;
 			this.textBox.ShortcutsEnabled = true;
-			this.textBox.Size = new System.Drawing.Size(668, 74);
+			this.textBox.Size = new System.Drawing.Size(599, 70);
 			this.textBox.TabIndex = 0;
 			this.textBox.UseSelectable = true;
 			this.textBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -86,7 +86,7 @@ namespace Emu328p.GUI
 			this.reciveTextBox.CustomButton.UseSelectable = true;
 			this.reciveTextBox.CustomButton.Visible = false;
 			this.reciveTextBox.Lines = new string[0];
-			this.reciveTextBox.Location = new System.Drawing.Point(9, 13);
+			this.reciveTextBox.Location = new System.Drawing.Point(23, 63);
 			this.reciveTextBox.MaxLength = 1;
 			this.reciveTextBox.Name = "reciveTextBox";
 			this.reciveTextBox.PasswordChar = '\0';
@@ -103,7 +103,7 @@ namespace Emu328p.GUI
 			// 
 			// reciveButton
 			// 
-			this.reciveButton.Location = new System.Drawing.Point(115, 13);
+			this.reciveButton.Location = new System.Drawing.Point(129, 63);
 			this.reciveButton.Name = "reciveButton";
 			this.reciveButton.Size = new System.Drawing.Size(75, 20);
 			this.reciveButton.TabIndex = 2;
@@ -115,18 +115,19 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(686, 130);
+			this.ClientSize = new System.Drawing.Size(642, 179);
 			this.ControlBox = false;
 			this.Controls.Add(this.reciveButton);
 			this.Controls.Add(this.reciveTextBox);
 			this.Controls.Add(this.textBox);
-			this.Location = new System.Drawing.Point(0, 485);
+			this.Location = new System.Drawing.Point(0, 489);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(220, 130);
 			this.Name = "UART";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+			this.Text = "UART";
 			this.ResumeLayout(false);
 
 		}

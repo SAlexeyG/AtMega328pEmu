@@ -51,9 +51,10 @@ namespace Emu328p.GUI
 			this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripRotateButton});
-			this.toolStrip.Location = new System.Drawing.Point(3, 7);
+			this.toolStrip.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip.Name = "toolStrip";
-			this.toolStrip.Size = new System.Drawing.Size(26, 25);
+			this.toolStrip.Padding = new System.Windows.Forms.Padding(0);
+			this.toolStrip.Size = new System.Drawing.Size(25, 25);
 			this.toolStrip.TabIndex = 5;
 			this.toolStrip.Text = "toolStrip1";
 			// 
@@ -76,11 +77,13 @@ namespace Emu328p.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.picturePanel.BackgroundImage = global::Emu328p.Properties.Resources.arduino_board2;
 			this.picturePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.picturePanel.Controls.Add(this.toolStrip);
 			this.picturePanel.Controls.Add(this.resetButtonPicture);
 			this.picturePanel.Controls.Add(this.onLedPicture);
 			this.picturePanel.Controls.Add(this.txLedPicture);
 			this.picturePanel.Controls.Add(this.rxLedPicture);
-			this.picturePanel.Location = new System.Drawing.Point(12, 28);
+			this.picturePanel.Location = new System.Drawing.Point(24, 62);
+			this.picturePanel.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
 			this.picturePanel.Name = "picturePanel";
 			this.picturePanel.Size = new System.Drawing.Size(270, 403);
 			this.picturePanel.TabIndex = 4;
@@ -88,9 +91,10 @@ namespace Emu328p.GUI
 			// resetButtonPicture
 			// 
 			this.resetButtonPicture.BackColor = System.Drawing.Color.Transparent;
-			this.resetButtonPicture.Location = new System.Drawing.Point(233, 78);
+			this.resetButtonPicture.Location = new System.Drawing.Point(232, 78);
+			this.resetButtonPicture.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
 			this.resetButtonPicture.Name = "resetButtonPicture";
-			this.resetButtonPicture.Size = new System.Drawing.Size(15, 15);
+			this.resetButtonPicture.Size = new System.Drawing.Size(16, 14);
 			this.resetButtonPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.resetButtonPicture.TabIndex = 5;
 			this.resetButtonPicture.TabStop = false;
@@ -100,8 +104,9 @@ namespace Emu328p.GUI
 			this.onLedPicture.BackColor = System.Drawing.Color.Transparent;
 			this.onLedPicture.Image = global::Emu328p.Properties.Resources.OnLED;
 			this.onLedPicture.Location = new System.Drawing.Point(174, 316);
+			this.onLedPicture.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
 			this.onLedPicture.Name = "onLedPicture";
-			this.onLedPicture.Size = new System.Drawing.Size(32, 32);
+			this.onLedPicture.Size = new System.Drawing.Size(32, 33);
 			this.onLedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.onLedPicture.TabIndex = 4;
 			this.onLedPicture.TabStop = false;
@@ -111,9 +116,10 @@ namespace Emu328p.GUI
 			// 
 			this.txLedPicture.BackColor = System.Drawing.Color.Transparent;
 			this.txLedPicture.Image = global::Emu328p.Properties.Resources.LED;
-			this.txLedPicture.Location = new System.Drawing.Point(171, 153);
+			this.txLedPicture.Location = new System.Drawing.Point(172, 155);
+			this.txLedPicture.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
 			this.txLedPicture.Name = "txLedPicture";
-			this.txLedPicture.Size = new System.Drawing.Size(32, 32);
+			this.txLedPicture.Size = new System.Drawing.Size(32, 33);
 			this.txLedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.txLedPicture.TabIndex = 3;
 			this.txLedPicture.TabStop = false;
@@ -123,9 +129,10 @@ namespace Emu328p.GUI
 			// 
 			this.rxLedPicture.BackColor = System.Drawing.Color.Transparent;
 			this.rxLedPicture.Image = global::Emu328p.Properties.Resources.LED;
-			this.rxLedPicture.Location = new System.Drawing.Point(163, 153);
+			this.rxLedPicture.Location = new System.Drawing.Point(164, 155);
+			this.rxLedPicture.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
 			this.rxLedPicture.Name = "rxLedPicture";
-			this.rxLedPicture.Size = new System.Drawing.Size(32, 32);
+			this.rxLedPicture.Size = new System.Drawing.Size(32, 33);
 			this.rxLedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.rxLedPicture.TabIndex = 2;
 			this.rxLedPicture.TabStop = false;
@@ -135,12 +142,13 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(303, 446);
+			this.ClientSize = new System.Drawing.Size(320, 488);
 			this.ControlBox = false;
-			this.Controls.Add(this.toolStrip);
 			this.Controls.Add(this.picturePanel);
-			this.Location = new System.Drawing.Point(592, 0);
+			this.Location = new System.Drawing.Point(551, 0);
+			this.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
 			this.Name = "BoardModel";
+			this.Padding = new System.Windows.Forms.Padding(20, 61, 20, 20);
 			this.Resizable = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Модель платы";
@@ -148,12 +156,12 @@ namespace Emu328p.GUI
 			this.toolStrip.ResumeLayout(false);
 			this.toolStrip.PerformLayout();
 			this.picturePanel.ResumeLayout(false);
+			this.picturePanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.resetButtonPicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.onLedPicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txLedPicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.rxLedPicture)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 

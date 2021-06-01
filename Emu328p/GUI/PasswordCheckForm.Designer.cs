@@ -143,6 +143,7 @@ namespace Emu328p.GUI
 			this.Controls.Add(this.passwordLabel);
 			this.MaximizeBox = false;
 			this.Name = "PasswordCheckForm";
+			this.Resizable = false;
 			this.ShowIcon = false;
 			this.Text = "Вход";
 			this.ResumeLayout(false);

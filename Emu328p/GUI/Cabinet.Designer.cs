@@ -41,7 +41,7 @@ namespace Emu328p.GUI
 			// loginLabel
 			// 
 			this.loginLabel.AutoSize = true;
-			this.loginLabel.Location = new System.Drawing.Point(4, 13);
+			this.loginLabel.Location = new System.Drawing.Point(23, 60);
 			this.loginLabel.Name = "loginLabel";
 			this.loginLabel.Size = new System.Drawing.Size(75, 19);
 			this.loginLabel.TabIndex = 0;
@@ -62,7 +62,7 @@ namespace Emu328p.GUI
 			this.loginTextBox.CustomButton.UseSelectable = true;
 			this.loginTextBox.CustomButton.Visible = false;
 			this.loginTextBox.Lines = new string[0];
-			this.loginTextBox.Location = new System.Drawing.Point(85, 12);
+			this.loginTextBox.Location = new System.Drawing.Point(104, 59);
 			this.loginTextBox.MaxLength = 32767;
 			this.loginTextBox.Name = "loginTextBox";
 			this.loginTextBox.PasswordChar = '\0';
@@ -93,7 +93,7 @@ namespace Emu328p.GUI
 			this.passTextBox.CustomButton.UseSelectable = true;
 			this.passTextBox.CustomButton.Visible = false;
 			this.passTextBox.Lines = new string[0];
-			this.passTextBox.Location = new System.Drawing.Point(85, 38);
+			this.passTextBox.Location = new System.Drawing.Point(104, 85);
 			this.passTextBox.MaxLength = 32767;
 			this.passTextBox.Name = "passTextBox";
 			this.passTextBox.PasswordChar = '\0';
@@ -112,7 +112,7 @@ namespace Emu328p.GUI
 			// passLabel
 			// 
 			this.passLabel.AutoSize = true;
-			this.passLabel.Location = new System.Drawing.Point(4, 39);
+			this.passLabel.Location = new System.Drawing.Point(23, 86);
 			this.passLabel.Name = "passLabel";
 			this.passLabel.Size = new System.Drawing.Size(83, 19);
 			this.passLabel.TabIndex = 2;
@@ -133,7 +133,7 @@ namespace Emu328p.GUI
 			this.mailTextBox.CustomButton.UseSelectable = true;
 			this.mailTextBox.CustomButton.Visible = false;
 			this.mailTextBox.Lines = new string[0];
-			this.mailTextBox.Location = new System.Drawing.Point(85, 64);
+			this.mailTextBox.Location = new System.Drawing.Point(104, 111);
 			this.mailTextBox.MaxLength = 32767;
 			this.mailTextBox.Name = "mailTextBox";
 			this.mailTextBox.PasswordChar = '\0';
@@ -152,7 +152,7 @@ namespace Emu328p.GUI
 			// mailLabel
 			// 
 			this.mailLabel.AutoSize = true;
-			this.mailLabel.Location = new System.Drawing.Point(4, 65);
+			this.mailLabel.Location = new System.Drawing.Point(23, 112);
 			this.mailLabel.Name = "mailLabel";
 			this.mailLabel.Size = new System.Drawing.Size(71, 19);
 			this.mailLabel.TabIndex = 4;
@@ -161,7 +161,7 @@ namespace Emu328p.GUI
 			// changeButton
 			// 
 			this.changeButton.Enabled = false;
-			this.changeButton.Location = new System.Drawing.Point(4, 87);
+			this.changeButton.Location = new System.Drawing.Point(23, 134);
 			this.changeButton.Name = "changeButton";
 			this.changeButton.Size = new System.Drawing.Size(75, 23);
 			this.changeButton.TabIndex = 100;
@@ -173,7 +173,7 @@ namespace Emu328p.GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(189, 116);
+			this.ClientSize = new System.Drawing.Size(228, 179);
 			this.ControlBox = false;
 			this.Controls.Add(this.changeButton);
 			this.Controls.Add(this.mailTextBox);
@@ -182,13 +182,14 @@ namespace Emu328p.GUI
 			this.Controls.Add(this.passLabel);
 			this.Controls.Add(this.loginTextBox);
 			this.Controls.Add(this.loginLabel);
-			this.Location = new System.Drawing.Point(702, 485);
+			this.Location = new System.Drawing.Point(643, 489);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "Cabinet";
 			this.Resizable = false;
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+			this.Text = "Личный кабинет";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
