@@ -13,12 +13,19 @@ namespace Emu328p.Emulator.Decoding
 		public Type9()
 		{
 			decodingTable.Add(0xb800, Out);
+			decodingTable.Add(0xb000, In);
 		}
 
 		private void Out(ushort opcode, ISRAM sramManager, IFlash flashManager)
 		{
 			byte value = sramManager.GetByte(GetResource(opcode));
 			sramManager.SetByte(GetPort(opcode), value);
+		}
+
+		private void In(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			byte value = sramManager.GetByte(GetPort(opcode));
+			sramManager.SetByte(GetResource(opcode), value);
 		}
 
 		private static uint GetPort(ushort opcode)

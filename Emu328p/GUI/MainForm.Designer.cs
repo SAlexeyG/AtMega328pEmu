@@ -211,7 +211,7 @@ namespace Emu328p.GUI
 			this.toolStripStop.Name = "toolStripStop";
 			this.toolStripStop.Size = new System.Drawing.Size(23, 22);
 			this.toolStripStop.Text = "Стоп";
-			this.toolStripStop.ToolTipText = "toolStripStop";
+			this.toolStripStop.ToolTipText = "Стоп";
 			this.toolStripStop.Click += new System.EventHandler(this.menuStop_Click);
 			// 
 			// toolStripSeparator3

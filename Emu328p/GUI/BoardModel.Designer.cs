@@ -37,12 +37,14 @@ namespace Emu328p.GUI
 			this.onLedPicture = new System.Windows.Forms.PictureBox();
 			this.txLedPicture = new System.Windows.Forms.PictureBox();
 			this.rxLedPicture = new System.Windows.Forms.PictureBox();
+			this.lLedPicture = new System.Windows.Forms.PictureBox();
 			this.toolStrip.SuspendLayout();
 			this.picturePanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.resetButtonPicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.onLedPicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txLedPicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.rxLedPicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.lLedPicture)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// toolStrip
@@ -77,6 +79,7 @@ namespace Emu328p.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.picturePanel.BackgroundImage = global::Emu328p.Properties.Resources.arduino_board2;
 			this.picturePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.picturePanel.Controls.Add(this.lLedPicture);
 			this.picturePanel.Controls.Add(this.toolStrip);
 			this.picturePanel.Controls.Add(this.resetButtonPicture);
 			this.picturePanel.Controls.Add(this.onLedPicture);
@@ -116,7 +119,7 @@ namespace Emu328p.GUI
 			// 
 			this.txLedPicture.BackColor = System.Drawing.Color.Transparent;
 			this.txLedPicture.Image = global::Emu328p.Properties.Resources.LED;
-			this.txLedPicture.Location = new System.Drawing.Point(172, 155);
+			this.txLedPicture.Location = new System.Drawing.Point(171, 153);
 			this.txLedPicture.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
 			this.txLedPicture.Name = "txLedPicture";
 			this.txLedPicture.Size = new System.Drawing.Size(32, 33);
@@ -129,7 +132,7 @@ namespace Emu328p.GUI
 			// 
 			this.rxLedPicture.BackColor = System.Drawing.Color.Transparent;
 			this.rxLedPicture.Image = global::Emu328p.Properties.Resources.LED;
-			this.rxLedPicture.Location = new System.Drawing.Point(164, 155);
+			this.rxLedPicture.Location = new System.Drawing.Point(163, 153);
 			this.rxLedPicture.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
 			this.rxLedPicture.Name = "rxLedPicture";
 			this.rxLedPicture.Size = new System.Drawing.Size(32, 33);
@@ -137,6 +140,19 @@ namespace Emu328p.GUI
 			this.rxLedPicture.TabIndex = 2;
 			this.rxLedPicture.TabStop = false;
 			this.rxLedPicture.Visible = false;
+			// 
+			// lLedPicture
+			// 
+			this.lLedPicture.BackColor = System.Drawing.Color.Transparent;
+			this.lLedPicture.Image = global::Emu328p.Properties.Resources.LED;
+			this.lLedPicture.Location = new System.Drawing.Point(193, 153);
+			this.lLedPicture.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+			this.lLedPicture.Name = "lLedPicture";
+			this.lLedPicture.Size = new System.Drawing.Size(32, 33);
+			this.lLedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.lLedPicture.TabIndex = 6;
+			this.lLedPicture.TabStop = false;
+			this.lLedPicture.Visible = false;
 			// 
 			// BoardModel
 			// 
@@ -161,6 +177,7 @@ namespace Emu328p.GUI
 			((System.ComponentModel.ISupportInitialize)(this.onLedPicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txLedPicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.rxLedPicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.lLedPicture)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -174,5 +191,6 @@ namespace Emu328p.GUI
 		private System.Windows.Forms.PictureBox rxLedPicture;
 		private System.Windows.Forms.ToolStrip toolStrip;
 		private System.Windows.Forms.ToolStripButton toolStripRotateButton;
+		private System.Windows.Forms.PictureBox lLedPicture;
 	}
 }

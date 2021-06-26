@@ -56,6 +56,7 @@ namespace Emu328p.GUI
 			this.textBox.Multiline = true;
 			this.textBox.Name = "textBox";
 			this.textBox.PasswordChar = '\0';
+			this.textBox.ReadOnly = true;
 			this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.textBox.SelectedText = "";
 			this.textBox.SelectionLength = 0;

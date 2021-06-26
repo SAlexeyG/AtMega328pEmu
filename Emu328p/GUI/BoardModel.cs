@@ -46,13 +46,32 @@ namespace Emu328p.GUI
 			});
 		}
 
+		private async void RXBlinckAsync(object sender, UARTEventArgs e)
+		{
+			await Task.Run(() =>
+			{
+				if (!IsDisposed)
+				{
+					Invoke(LedSwitcher, rxLedPicture);
+				}
+
+				Thread.Sleep(100);
+
+				if (!IsDisposed)
+				{
+					Invoke(LedSwitcher, rxLedPicture);
+				}
+			});
+		}
+
 		public BoardModel()
 		{
 			LedSwitcher = (led) => led.Visible = !led.Visible;
 			InitializeComponent();
-			rotationVectors.Add(onLedPicture, new Point(-85, -164));
-			rotationVectors.Add(rxLedPicture, new Point(66, -15));
-			rotationVectors.Add(txLedPicture, new Point(60, -4));
+			rotationVectors.Add(onLedPicture, new Point(-83, -166));
+			rotationVectors.Add(rxLedPicture, new Point(70, -13));
+			rotationVectors.Add(txLedPicture, new Point(62, -5));
+			rotationVectors.Add(lLedPicture, new Point(40, 13));
 			rotationVectors.Add(resetButtonPicture, new Point(80, 126));
 		}
 
@@ -61,11 +80,13 @@ namespace Emu328p.GUI
 			this.microcontroller = microcontroller;
 			this.microcontroller.OnStatusChanged += ChangeOnLed;
 			this.microcontroller.UartUnit.OnCharWriting += TXBlinckAsync;
+			this.microcontroller.UartUnit.OnCharReading += RXBlinckAsync;
 		}
 
 		private void ChangeOnLed()
 		{
 			onLedPicture.Visible = microcontroller.IsRunning;
+			lLedPicture.Visible = microcontroller.IsRunning;
 		}
 
 		private void BoardModel_FormClosing(object sender, FormClosingEventArgs e)
@@ -73,6 +94,7 @@ namespace Emu328p.GUI
 			if (microcontroller != null)
 			{
 				microcontroller.UartUnit.OnCharWriting -= TXBlinckAsync;
+				microcontroller.UartUnit.OnCharReading -= RXBlinckAsync;
 			}
 		}
 
@@ -106,6 +128,7 @@ namespace Emu328p.GUI
 			RotatePicture(onLedPicture);
 			RotatePicture(rxLedPicture);
 			RotatePicture(txLedPicture);
+			RotatePicture(lLedPicture);
 			RotatePicture(resetButtonPicture);
 
 			isRotated = !isRotated;

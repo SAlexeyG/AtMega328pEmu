@@ -15,6 +15,9 @@ namespace Emu328p.Emulator.Decoding
 			decodingTable.Add(0xe000, Ldi);
 			decodingTable.Add(0x5000, Subi);
 			decodingTable.Add(0x4000, Sbci);
+			decodingTable.Add(0x3000, Cpi);
+			decodingTable.Add(0x6000, Ori);
+			decodingTable.Add(0x7000, Andi);
 		}
 
 		private void Ldi(ushort opcode, ISRAM sramManager, IFlash flashManager)
@@ -41,6 +44,101 @@ namespace Emu328p.Emulator.Decoding
 			byte value = (byte)(operand1 - operand2 - zeroFlag);
 			sramManager.SetByte(destination, value);
 			SetStatusFlags(sramManager, operand1, operand2, value);
+		}
+
+		private void Cpi(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			uint destination = GetDestination(opcode);
+			byte operand1 = sramManager.GetByte(destination);
+			byte operand2 = GetValue(opcode);
+			byte value = (byte)(operand1 - operand2);
+			SetStatusFlags(sramManager, operand1, operand2, value);
+		}
+
+		private void Ori(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			uint destination = GetDestination(opcode);
+			uint resource = GetValue(opcode);
+			byte result = (byte)(sramManager.GetByte(destination) | sramManager.GetByte(resource));
+			sramManager.SetByte(destination, result);
+
+			byte sreg = sramManager.GetByte(Registers.IO.SREG);
+
+			byte negativeFlag = (byte)(result >> 7);
+			if (negativeFlag == 1)
+			{
+				sreg |= 0x14;
+			}
+			else
+			{
+				sreg &= 0xeb;
+			}
+
+			sreg &= 0xf7;
+
+			if (result == 0)
+			{
+				sreg |= 0x02;
+			}
+			else
+			{
+				sreg &= 0xfd;
+			}
+
+			byte sFlag = (byte)(negativeFlag ^ 0);
+			if (sFlag == 1)
+			{
+				sreg |= 0x10;
+			}
+			else
+			{
+				sreg &= 0xef;
+			}
+
+			sramManager.SetByte(Registers.IO.SREG, sreg);
+		}
+
+		private void Andi(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			uint destination = GetDestination(opcode);
+			uint resource = GetValue(opcode);
+			byte result = (byte)(sramManager.GetByte(destination) & sramManager.GetByte(resource));
+			sramManager.SetByte(destination, result);
+
+			byte sreg = sramManager.GetByte(Registers.IO.SREG);
+
+			byte negativeFlag = (byte)(result >> 7);
+			if (negativeFlag == 1)
+			{
+				sreg |= 0x14;
+			}
+			else
+			{
+				sreg &= 0xeb;
+			}
+
+			sreg &= 0xf7;
+
+			if (result == 0)
+			{
+				sreg |= 0x02;
+			}
+			else
+			{
+				sreg &= 0xfd;
+			}
+
+			byte sFlag = (byte)(negativeFlag ^ 0);
+			if (sFlag == 1)
+			{
+				sreg |= 0x10;
+			}
+			else
+			{
+				sreg &= 0xef;
+			}
+
+			sramManager.SetByte(Registers.IO.SREG, sreg);
 		}
 
 		private static void SetStatusFlags(ISRAM sramManager, byte operand1, byte operand2, byte value)

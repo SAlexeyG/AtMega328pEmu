@@ -27,12 +27,12 @@ namespace Emu328p.Emulator
 			byte[] byteArray = new byte[1];
 			byteArray[0] = sramManager.GetByte(Registers.IO.UDR0);
 
-			if (byteArray[0] == skipSymbol)
+			if (byteArray[0] == skipSymbol || byteArray[0] == '\0')
 			{
-				skipSymbol = '\0';
 				return;
 			}
 
+			skipSymbol = '\0';
 			sramManager.SetByte(Registers.IO.UDR0, 0);
 			char[] charArray = Encoding.ASCII.GetChars(byteArray);
 

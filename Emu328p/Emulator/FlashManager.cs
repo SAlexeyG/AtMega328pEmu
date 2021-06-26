@@ -39,7 +39,16 @@ namespace Emu328p.Emulator
 
 		public ushort GetWord()
 		{
-			ushort value = flash[PC + 1];
+			ushort value;
+			try
+			{
+				value = flash[PC + 1];
+			}
+			catch (Exception)
+			{
+				pc = 0;
+				value = flash[PC + 1];
+			}
 			value <<= 8;
 			value |= flash[PC];
 			PC += 2;

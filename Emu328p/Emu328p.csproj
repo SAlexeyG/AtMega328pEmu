@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>png-transparent-microcontroller-computer-icons-atmel-others-miscellaneous-electronics-text-thumbnail.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -67,11 +70,14 @@
     <Compile Include="Emulator\Decoding\Type.cs" />
     <Compile Include="Emulator\Decoding\Type1.cs" />
     <Compile Include="Emulator\Decoding\Type11.cs" />
+    <Compile Include="Emulator\Decoding\Type12.cs" />
     <Compile Include="Emulator\Decoding\Type13.cs" />
     <Compile Include="Emulator\Decoding\Type14.cs" />
+    <Compile Include="Emulator\Decoding\Type2.cs" />
     <Compile Include="Emulator\Decoding\Type3.cs" />
     <Compile Include="Emulator\Decoding\Type4.cs" />
     <Compile Include="Emulator\Decoding\Type5.cs" />
+    <Compile Include="Emulator\Decoding\Type6.cs" />
     <Compile Include="Emulator\Decoding\Type7.cs" />
     <Compile Include="Emulator\Decoding\Type8.cs" />
     <Compile Include="Emulator\Decoding\Type9.cs" />
@@ -245,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="png-transparent-microcontroller-computer-icons-atmel-others-miscellaneous-electronics-text-thumbnail.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

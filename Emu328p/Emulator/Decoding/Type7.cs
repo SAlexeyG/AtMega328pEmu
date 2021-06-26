@@ -46,7 +46,9 @@ namespace Emu328p.Emulator.Decoding
 
 		private static uint GetOffset(ushort opcode, IFlash flashManager)
 		{
-			uint offset = (uint)(flashManager.PC + ((((opcode & 0x03f8) >> 3) - 0x80) << 1));
+			int k = (opcode & 0x03f8) >> 3;
+			k -= k > 0x3f ? 0x80 : 0x00;
+			uint offset = (uint)(flashManager.PC + (k << 1));
 			return offset;
 		}
 

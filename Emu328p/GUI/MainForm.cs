@@ -40,6 +40,9 @@ namespace Emu328p.GUI
 		{
 			InitializeComponent();
 
+			openFileDialog.InitialDirectory = Application.StartupPath;
+			saveFileDialog.InitialDirectory = Application.StartupPath;
+
 			readers.Add(".bin", FileReader.ReadBin);
 			readers.Add(".hex", FileReader.ReadHex);
 

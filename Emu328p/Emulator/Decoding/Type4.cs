@@ -36,6 +36,14 @@ namespace Emu328p.Emulator.Decoding
 			decodingTable.Add(0x900e, LdDec(Registers.GP.X));
 			decodingTable.Add(0x900a, LdDec(Registers.GP.X));
 			decodingTable.Add(0x9002, LdDec(Registers.GP.X));
+
+			decodingTable.Add(0x9004, Lpm);
+			decodingTable.Add(0x9005, LpmInc);
+
+			decodingTable.Add(0x920f, Push);
+			decodingTable.Add(0x900f, Pop);
+
+			decodingTable.Add(0x940a, Dec);
 		}
 
 		private DecodedOperation St(uint register)
@@ -102,6 +110,86 @@ namespace Emu328p.Emulator.Decoding
 				byte value = sramManager.GetByte(sramManager.GetWord(register));
 				sramManager.SetByte(offset, value);
 			};
+		}
+
+		private void Lpm(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			uint offset = GetDestination(opcode);
+			byte value = sramManager.GetByte(sramManager.GetWord(Registers.GP.Z));
+			sramManager.SetByte(offset, value);
+		}
+
+		private void LpmInc(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			uint offset = GetDestination(opcode);
+			byte value = sramManager.GetByte(sramManager.GetWord(Registers.GP.Z));
+			sramManager.SetByte(offset, value);
+			sramManager.SetWord(Registers.GP.Z, (ushort)(sramManager.GetWord(Registers.GP.Z) + 1));
+		}
+
+		private void Push(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			sramManager.SetWord(Registers.IO.SPL, (ushort)(sramManager.GetWord(Registers.IO.SPL) - 1));
+			sramManager.SetByte(sramManager.GetWord(Registers.IO.SPL), sramManager.GetByte(GetDestination(opcode)));
+		}
+
+		private void Pop(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			sramManager.SetByte(GetDestination(opcode), sramManager.GetByte(sramManager.GetWord(Registers.IO.SPL)));
+			sramManager.SetWord(Registers.IO.SPL, (ushort)(sramManager.GetWord(Registers.IO.SPL) + 1));
+		}
+
+		private void Dec(ushort opcode, ISRAM sramManager, IFlash flashManager)
+		{
+			uint offset = GetDestination(opcode);
+			byte value = (byte)(sramManager.GetByte(offset) - 1);
+			sramManager.SetByte(offset, value);
+
+			byte sreg = sramManager.GetByte(Registers.IO.SREG);
+
+			byte vFlag = (byte)(
+				(((value ^ value & 0x80) >> 7) & ((value & 0x80) >> 6) & 
+				((value & 0x80) >> 5)) & ((value & 0x80) >> 4) & ((value & 0x80) >> 3) &
+				((value & 0x80) >> 2) & ((value & 0x80) >> 1) & (value & 0x80));
+			if (vFlag == 1)
+			{
+				sreg |= 0x08;
+			}
+			else
+			{
+				sreg &= 0xf7;
+			}
+
+			byte negativeFlag = (byte)(value >> 7);
+			if (negativeFlag == 1)
+			{
+				sreg |= 0x14;
+			}
+			else
+			{
+				sreg &= 0xeb;
+			}
+
+			if (value == 0)
+			{
+				sreg |= 0x02;
+			}
+			else
+			{
+				sreg &= 0xfd;
+			}
+
+			byte sFlag = (byte)((negativeFlag ^ vFlag) & 0x01);
+			if (sFlag == 1)
+			{
+				sreg |= 0x10;
+			}
+			else
+			{
+				sreg &= 0xef;
+			}
+
+			sramManager.SetByte(Registers.IO.SREG, sreg);
 		}
 
 		private static uint GetDestination(ushort opcode)

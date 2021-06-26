@@ -30,13 +30,16 @@ namespace Emu328p.Emulator.Decoding
 		public DecodingUnit()
 		{
 			opcodeFormatTypes.Add(new Type1());
+			opcodeFormatTypes.Add(new Type2());
 			opcodeFormatTypes.Add(new Type3());
 			opcodeFormatTypes.Add(new Type4());
 			opcodeFormatTypes.Add(new Type5());
+			opcodeFormatTypes.Add(new Type6());
 			opcodeFormatTypes.Add(new Type7());
 			opcodeFormatTypes.Add(new Type8());
 			opcodeFormatTypes.Add(new Type9());
 			opcodeFormatTypes.Add(new Type11());
+			opcodeFormatTypes.Add(new Type12());
 			opcodeFormatTypes.Add(new Type13());
 			opcodeFormatTypes.Add(new Type14());
 		}
