@@ -64,6 +64,7 @@ namespace Emu328p.GUI
 			this.textBox.ShortcutsEnabled = true;
 			this.textBox.Size = new System.Drawing.Size(331, 83);
 			this.textBox.TabIndex = 0;
+			this.textBox.TabStop = false;
 			this.textBox.UseSelectable = true;
 			this.textBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
 			this.textBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
