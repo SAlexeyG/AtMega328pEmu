@@ -25,7 +25,8 @@ namespace Emu328p.GUI
 				innerException = innerException.InnerException;
 			}
 
-			errorMessage = innerException.Message + "\r\n" +
+			errorMessage = "Sender: " + UserPrefs.Mail + "\r\n" +
+				innerException.Message + "\r\n" +
 				innerException.Source + "\r\n" +
 				innerException.TargetSite + "\r\n" + 
 				innerException.StackTrace;
